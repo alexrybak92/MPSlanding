@@ -1,2 +1,5 @@
 node_modules
 .idea/
+src/scss/out/style.css
+src/css/style.min.css
+src/index.html
