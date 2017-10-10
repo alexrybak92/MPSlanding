@@ -4,16 +4,55 @@
 		@extend .wrapper, .section-gap;
 	}
 
+	&__img {
+
+		&-wrap {
+			width: 100%;
+			max-width: 506px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 2rem;
+		}
+
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
 	&__title {
-		@extend .title-section;
+		@extend .title-section, .color--brownish-grey;
 		text-align: center;
+
+		&::before {
+			content: '';
+
+		}
 	}
 
 	&__txt {
-		@extend .txt-nm;
+		@extend .txt-nm, .color--warm-grey;
 	}
 
 	&__list {
-		@extend .txt-nm;
+		@extend .txt-nm, .color--warm-grey;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+	}
+
+	&__btn {
+		@extend .btn;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 1.25rem;
+			height: 3.5rem;
+			vertical-align: middle;
+			margin-right: 8px;
+			background-image: url('../img/AdobePDF_icon.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
 	}
 }
