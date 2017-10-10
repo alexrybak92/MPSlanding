@@ -1,5 +1,5 @@
-node_modules
+node_modules/
 .idea/
-src/css/
-index.html
-src/scss/out
+/src/index.html
+/src/scss/out/style.css
+/src/css/style.min.css
