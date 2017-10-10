@@ -725,8 +725,23 @@ body {
   background-color: #347cf4;
 }
 
-div {
-  background: red;
+.promo {
+  position: relative;
+  padding-bottom: 40px;
+  background: lightpink;
+}
+
+.promo::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  background: url(./../img/bg-triangle-bottom.svg) top center no-repeat;
+  background-size: auto 100%;
+  z-index: 2;
 }
 
 @media (min-width: 960px) {
