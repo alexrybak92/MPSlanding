@@ -744,6 +744,10 @@ body {
   z-index: 2;
 }
 
+div {
+  color: #000;
+}
+
 @media (min-width: 960px) {
   .section-gap {
     padding-top: 100px;
