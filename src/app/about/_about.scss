@@ -8,7 +8,7 @@
 
 		&-wrap {
 			width: 100%;
-			max-width: 506px;
+			max-width: 505px;
 			margin-left: auto;
 			margin-right: auto;
 			margin-bottom: 2rem;
@@ -19,13 +19,28 @@
 		display: block;
 	}
 
+	&__content {
+		width: 100%;
+		max-width: 600px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-left: 15px;
+	}
+
 	&__title {
 		@extend .title-section, .color--brownish-grey;
-		text-align: center;
+		position: relative;
+		padding-left: 2.25rem;
 
 		&::before {
+			@extend .bg--primary;
 			content: '';
-
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 6px;
 		}
 	}
 
@@ -40,6 +55,7 @@
 	}
 
 	&__btn {
+
 		@extend .btn;
 
 		&::before {
@@ -55,4 +71,38 @@
 			background-position: center;
 		}
 	}
+
+
+	@media (min-width: $md) {
+		&-wrap {
+			display: flex;
+		}
+
+		&__img {
+
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&-wrap {
+				margin-bottom: 0;
+				display: flex;
+				width: 42.735%;
+				margin-left: 0;
+			}
+		}
+
+		&__content {
+			width: 51.282%;
+			margin-right: 0;
+		}
+	}
+
+	@media (min-width: $lg) {
+		&__img-wrap,
+		&__content {
+			width: 100%;
+		}
+	}
+
+
 }
