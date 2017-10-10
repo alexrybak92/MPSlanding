@@ -488,7 +488,8 @@ template {
 }
 
 .wrapper,
-.promo {
+.promo,
+.about-wrap {
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
@@ -496,7 +497,8 @@ template {
   max-width: 1200px;
 }
 
-.section-gap {
+.section-gap,
+.about-wrap {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -607,9 +609,9 @@ body {
   box-shadow: 0px 3px 9px 1px rgba(31, 31, 31, 0.3);
 }
 
-.shadow-btn {
-  -webkit-box-shadow: 0px 2px 4.8px 0.3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 2px 4.8px 0.3px rgba(0, 0, 0, 0.25);
+p {
+  margin-top: 0;
+  margin-bottom: .875rem;
 }
 
 .txt-promo--lg {
@@ -632,10 +634,14 @@ body {
   text-align: center;
 }
 
-.title-section {
+.title-section,
+.about__title {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2.25rem;
   font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .subtitle-contact {
@@ -680,13 +686,9 @@ body {
   font-size: .875rem;
 }
 
-.txt-nm--primary {
-  font-size: .875rem;
-  line-height: 2.07;
-}
-
-.txt-nm--secondary {
-  font-family: "Source Sans Pro", sans-serif;
+.txt-nm,
+.about__txt,
+.about__list {
   font-size: .875rem;
   line-height: 2.07;
 }
@@ -699,6 +701,10 @@ body {
   letter-spacing: 0.9px;
 }
 
+.txt--bold {
+  font-weight: 600;
+}
+
 .btn {
   display: inline-block;
   cursor: pointer;
@@ -708,18 +714,21 @@ body {
   font-weight: bold;
   letter-spacing: 0.1px;
   text-align: center;
-  line-height: 4.5;
+  line-height: 4;
   padding-left: 2.875rem;
   padding-right: 2.875rem;
   outline: none;
   border: none;
+  -webkit-box-shadow: 0px 2px 4.8px 0.3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4.8px 0.3px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #649cf6;
+  background-color: #5f98f6;
 }
 
 .btn:active {
@@ -849,8 +858,13 @@ body {
   top: -10px;
 }
 
+.about__title {
+  text-align: center;
+}
+
 @media (min-width: 960px) {
-  .section-gap {
+  .section-gap,
+  .about-wrap {
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -861,7 +875,8 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .section-gap {
+  .section-gap,
+  .about-wrap {
     padding-top: 150px;
     padding-bottom: 150px;
   }

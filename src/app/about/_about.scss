@@ -1,0 +1,19 @@
+.about {
+
+	&-wrap {
+		@extend .wrapper, .section-gap;
+	}
+
+	&__title {
+		@extend .title-section;
+		text-align: center;
+	}
+
+	&__txt {
+		@extend .txt-nm;
+	}
+
+	&__list {
+		@extend .txt-nm;
+	}
+}
