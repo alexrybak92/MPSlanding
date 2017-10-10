@@ -1,25 +1,39 @@
-.wrapper {
+//grid and main styles
 
-	width: 90%;
-	max-width: $md;
+.wrapper {
 	margin-left: auto;
 	margin-right: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	max-width: $lg;
+}
+
+.section-gap {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	@media (min-width: $md) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
 
 	@media (min-width: $lg) {
-		max-width: $wrap-width;
+		padding-top: 150px;
+		padding-bottom: 150px;
 	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 
 html {
-
-	font-family: sans-serif;
-	font-size: 12px;
-	line-height: 1.2;
-
-	@media (min-width: $sm){
-		font-size: 14px;
-	}
+	font-family: $font-primary;
+	font-size: 14px;
+	line-height: 1.4;
 
 	@media (min-width: $md){
 		font-size: 16px;
@@ -29,6 +43,216 @@ html {
 
 body {
 	min-width: 320px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
+}
+
+
+//colors, borders
+.color--primary {
+	color: $primary;
+}
+
+.color--white {
+	color: $white;
+}
+
+.color--brownish-grey {
+	color: $brownish-grey;
+}
+
+.color--pale-grey {
+	color: $pale-grey;
+}
+
+.color--pinkish-grey {
+	color: $pinkish-grey;
+}
+
+.color--warm-grey {
+	color: $warm-grey;
+}
+
+.color--warm-grey-075 {
+	color: $warm-grey-075;
+}
+
+
+//backgrounds
+.bg--primary {
+	background-color: $primary;
+}
+
+.bg--white {
+	background-color: $white;
+}
+
+.bg--black-2 {
+	background-color: $black-2;
+}
+
+.bg--pale-grey {
+	background-color: $pale-grey;
+}
+
+// border
+.bb--grey-2 {
+	border-bottom: 1px solid $pale-grey-2;
+}
+
+.bb--silver {
+	background-color: 1px solid $silver;
+}
+
+
+//shadows
+.shadow-form {
+	box-shadow: 0px 5px 5px 0 $black-010;
+}
+
+.shadow-contact {
+	box-shadow: 0px 3px 5px 0 $black-010;
+}
+
+.shadow-partners {
+	box-shadow: 0px 1px 3px 0 $black-009;
+	transition: all .3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0px 3px 9px 1px $black-030;
+	}
+}
+
+.shadow-btn {
+	box-shadow: 0px 2px 4.8px 0.3px $black-025;
+}
+
+
+//typograohy
+.txt-promo--lg {
+	@extend .color--pale-grey;
+  font-size: 4.5rem;
+  font-weight: bold;
+  letter-spacing: 7.2px;
+  text-align: center;
+}
+
+.txt-promo--nm {
+	@extend .color--pale-grey;
+  font-family: $font-secondary;
+  font-size: 1.5rem;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.txt-promo--sm {
+	@extend .color--pinkish-grey;
+  font-size: .875rem;
+  line-height: 1.71;
+  text-align: center;
+}
+
+.title-section {
+  font-family: $font-secondary;
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+
+.subtitle-contact {
+	@extend .color--primary;
+	font-family: $font-secondary;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.sumbtitle-services {
+	@extend .color--primary;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.txt-contact {
+	@extend .color--warm-grey;
+  font-size: 1.125rem;
+  line-height: 1.33;
+}
+
+.txt-nm--light {
+	@extend .color--warm-grey;
+	font-family: $font-secondary;
+  font-size: .875rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 1.1px;
+}
+
+.txt-footer {
+	@extend .color--warm-grey-075;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.71;
+}
+
+.txt-form {
+	@extend .color--warm-grey;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.71;
+}
+
+.txt-nav {
+	@extend .color--pale-grey;
+  font-size: .875rem;
+}
+
+.txt-nm--primary {
+	font-size: .875rem;
+	line-height: 2.07;
+}
+
+.txt-nm--secondary {
+	font-family: $font-secondary;
+	font-size: .875rem;
+	line-height: 2.07;
+}
+
+.txt--sm {
+	@extend .color--warm-grey;
+  font-family: $font-secondary;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.67;
+  letter-spacing: 0.9px;
+}
+
+//buttons
+.btn {
+	@extend .bg--primary, .color--white;
+	display: inline-block;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-decoration: none;
+  font-size: .875rem;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  text-align: center;
+	line-height: 4.5;
+	padding-left: 2.875rem;
+	padding-right: 2.875rem;
+	outline: none;
+	border: none;
+	transition: all .2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: $hover-color;
+	}
+
+	&:active{
+		background-color: $active-color;
+	}
+
 }
