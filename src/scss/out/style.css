@@ -727,6 +727,7 @@ body {
 
 .promo {
   position: relative;
+  height: 100vh;
   padding-bottom: 40px;
   background: lightpink;
 }
