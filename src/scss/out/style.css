@@ -528,11 +528,13 @@ body {
 }
 
 .color--white,
-.btn {
+.btn,
+.about__btn {
   color: #ffffff;
 }
 
-.color--brownish-grey {
+.color--brownish-grey,
+.about__title {
   color: #6a6a6a;
 }
 
@@ -552,7 +554,9 @@ body {
 .txt-contact,
 .txt-nm--light,
 .txt-form,
-.txt--sm {
+.txt--sm,
+.about__txt,
+.about__list {
   color: #999999;
 }
 
@@ -562,7 +566,8 @@ body {
 }
 
 .bg--primary,
-.btn {
+.btn,
+.about__btn {
   background-color: #4c8cf5;
 }
 
@@ -641,7 +646,7 @@ p {
   font-weight: bold;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .subtitle-contact {
@@ -705,7 +710,8 @@ p {
   font-weight: 600;
 }
 
-.btn {
+.btn,
+.about__btn {
   display: inline-block;
   cursor: pointer;
   text-transform: uppercase;
@@ -727,11 +733,14 @@ p {
 }
 
 .btn:hover,
-.btn:focus {
+.about__btn:hover,
+.btn:focus,
+.about__btn:focus {
   background-color: #5f98f6;
 }
 
-.btn:active {
+.btn:active,
+.about__btn:active {
   background-color: #347cf4;
 }
 
@@ -858,8 +867,44 @@ p {
   top: -10px;
 }
 
+.about__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about__img-wrap {
+  width: 100%;
+  max-width: 506px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
 .about__title {
   text-align: center;
+}
+
+.about__title::before {
+  content: '';
+}
+
+.about__list {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.about__btn::before {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 3.5rem;
+  vertical-align: middle;
+  margin-right: 8px;
+  background-image: url("../img/AdobePDF_icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 @media (min-width: 960px) {
