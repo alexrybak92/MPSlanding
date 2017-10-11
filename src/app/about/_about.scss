@@ -24,7 +24,6 @@
 		max-width: 600px;
 		margin-right: auto;
 		margin-left: auto;
-		padding-left: 15px;
 	}
 
 	&__title {
@@ -78,6 +77,10 @@
 			display: flex;
 		}
 
+		&__content {
+			padding-left: 1.2821%;
+		}
+
 		&__img {
 
 			margin-top: auto;
@@ -92,7 +95,7 @@
 		}
 
 		&__content {
-			width: 51.282%;
+			width: 51.2821%;
 			margin-right: 0;
 		}
 	}

@@ -19,15 +19,16 @@ var gulp 				= require('gulp'),
 //pug
 gulp.task('pug', function buildHTML() {
   return gulp.src('src/pug/*.pug')
-		.pipe(pug().on( 'error', notify.onError(
+		.pipe(pug({
+    	pretty: true
+    }).on( 'error', notify.onError(
       {
         message: "<%= error.message %>",
         title  : "Pug Error!"
       }))
-		)
-    .pipe(pug({
-    	pretty: true
-    }))
+    )
+		// .pipe(pug()
+		// )
     .pipe(gulp.dest('src'))
     .pipe(browserSync.reload({stream: true}))
 });

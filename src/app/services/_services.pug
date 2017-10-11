@@ -1,3 +1,24 @@
-article.services#srvices
+article.services#services
 	.services-wrap
-		h2.services__title Our&nbsp;services
+		.services__content
+			h2.services__title Our&nbsp;services
+			mixin serviceItem(serviceTitle, serviceTxt)
+				section.services__item.service(class!=attributes.class)
+					h3.service__title= serviceTitle
+					p.service__txt= serviceTxt
+			+serviceItem(
+			'Web Development',
+			'Create Web applications using modern approaches and technologies, like Angular 1 and 2. We build complex web applications that meet customer needs.'
+			)(class="service--development")
+			+serviceItem(
+			'Startup support',
+			'Need help creating rapid prototypes, Model-View-Presenter (MVP) and Demos? We’ve run our own startups, so we know the pains and problems involved. Let us help you solve your problems and impress investors at the early stage.'
+			)(class="service--support")
+			+serviceItem(
+			'Full stack Software Solutions',
+			'We can create the best software to bring your business idea to life. We excel at building complex, high-load and extendable solution on backend, frontend, and application levels.'
+			)(class="service--solutions")
+			+serviceItem(
+			'Industry expertise',
+			'We specialize in the following web and desktop solutions: simulators, GID, 3D visualization, solutions for UAVs, tracking and navigation systems, aviation, logistics, e-learning and training, travel, and warehousing.'
+			)(class="service--expertise")

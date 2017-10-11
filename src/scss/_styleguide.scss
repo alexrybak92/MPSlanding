@@ -9,8 +9,8 @@
 }
 
 .section-gap {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 
 	@media (min-width: $md) {
 		padding-top: 100px;
@@ -44,6 +44,8 @@ body {
 	min-width: 320px;
 	margin: 0 auto;
 }
+
+
 
 //colors, borders
 .color--primary {
@@ -119,6 +121,8 @@ body {
 	}
 }
 
+
+
 //typograohy
 p {
 	margin-top: 0;
@@ -165,9 +169,13 @@ p {
 
 .sumbtitle-services {
 	@extend .color--primary;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 1.6;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .txt-contact {
@@ -176,32 +184,45 @@ p {
 	line-height: 1.33;
 }
 
+.txt-nm {
+	font-size: 1rem;
+	line-height: 2.07;
+
+	@media (min-width: $md) {
+		font-size: .875rem;
+	}
+}
+
 .txt-nm--light {
 	@extend .color--warm-grey;
 	font-family: $font-secondary;
-	font-size: .875rem;
-	font-weight: 300;
-	line-height: 1.71;
-	letter-spacing: 1.1px;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 1.1px;
+
+	@media (min-width: $md) {
+		font-size: .875rem;
+	}
 }
 
 .txt-footer {
 	@extend .color--warm-grey-075;
-	font-size: .875rem;
-	font-weight: 600;
-	line-height: 1.71;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.71;
 }
 
 .txt-form {
 	@extend .color--warm-grey;
-	font-size: .875rem;
-	font-weight: 600;
-	line-height: 1.71;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.71;
 }
 
 .txt-nav {
 	@extend .color--pale-grey;
-	font-size: .875rem;
+  font-size: .875rem;
 }
 
 .txt-nm {
@@ -211,11 +232,11 @@ p {
 
 .txt--sm {
 	@extend .color--warm-grey;
-	font-family: $font-secondary;
-	font-size: 12px;
-	font-weight: 300;
-	line-height: 1.67;
-	letter-spacing: 0.9px;
+  font-family: $font-secondary;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.67;
+  letter-spacing: 0.9px;
 }
 
 .txt--bold {
@@ -229,10 +250,10 @@ p {
 	cursor: pointer;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: .875rem;
-	font-weight: bold;
-	letter-spacing: 0.1px;
-	text-align: center;
+  font-size: .875rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
 	line-height: 4;
 	padding-left: 2.25rem;
 	padding-right: 2.25rem;
