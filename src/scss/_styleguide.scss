@@ -222,7 +222,6 @@ p {
 }
 
 .txt-footer {
-	@extend .color--warm-grey-075;
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.71;
@@ -238,11 +237,6 @@ p {
 .txt-nav {
 	@extend .color--pale-grey;
   font-size: .875rem;
-}
-
-.txt-nm {
-	font-size: .875rem;
-	line-height: 2.07;
 }
 
 .txt--sm {

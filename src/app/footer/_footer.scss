@@ -1,0 +1,107 @@
+.footer {
+	@extend .bg--black-2, .color--warm-grey-075;
+	text-align: center;
+
+	&-wrap {
+		@extend .wrapper;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	&__copy {
+		@extend .txt-footer;
+	}
+
+	@media (min-width: $sm) {
+		&-wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	@media (min-width: $md) {
+
+		&-wrap {
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+	}
+}
+
+
+.social {
+
+	margin-bottom: 10px;
+
+	&__item {
+
+		@extend .color--warm-grey-075;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0 10px;
+		transition: all .3s ease;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			&::before {
+				color: $primary;
+			}
+		}
+
+		&:active {
+			color: $active-color;
+		}
+
+		&::before {
+			font-family: 'iconfont';
+			font-size: 22px;
+		}
+	}
+
+	&__skype {
+		&::before {
+			content: '\eac5';
+		}
+	}
+
+	&__fb {
+		&::before {
+			content: '\ea90';
+		}
+	}
+
+	&__in {
+		&::before {
+			content: '\eaca';
+		}
+	}
+
+	&__tw {
+		&::before {
+			content: '\ea96';
+		}
+	}
+
+	&__ig{
+		&::before {
+			content: '\ea92';
+		}
+	}
+
+	&__yt {
+		&::before {
+			content: '\ea9d';
+		}
+	}
+
+	@media (min-width: $sm) {
+		margin-bottom: 0;
+
+		&__item {
+			padding-left: 0;
+			padding-right: 20px;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+footer.footer
+	.footer-wrap
+		.footer__social.social
+			mixin socialItem(link)
+				a.social__item(class!=attributes.class href=link target='_blank')
+			+socialItem('skype:slaventij_')(class='social__skype')
+			+socialItem('https://www.facebook.com/mpsdevelopment')(class='social__fb')
+			+socialItem('https://www.linkedin.com/company/mps-development')(class='social__in')
+			+socialItem('https://twitter.com/DevelopmentMps')(class='social__tw')
+			+socialItem('https://www.instagram.com/mpsdevelopment/')(class='social__ig')
+			+socialItem('https://www.youtube.com/channel/UCwcBPYqssdEONR3yK_75iVw')(class='social__yt')
+		.footer__copy
+			<span class="js-get-current-year"></span>&nbsp;&copy;&nbsp;All rights reserved
