@@ -1,13 +1,47 @@
 .services {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: url('../img/services-bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba($black-2 , .95);
+	}
 
 	&-wrap {
 		@extend .wrapper, .section-gap;
 	}
 
+	&__content {
+		position: relative;
+		z-index: 1;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	&__title {
-		@extend .title-section, .color--brownish-grey;
+		@extend .title-section, .color--pale-grey;
 		position: relative;
 		padding-right: 2.25rem;
+		margin-bottom: 4.375rem;
 		text-align: right;
 
 		&::after {
@@ -21,4 +55,129 @@
 			width: 6px;
 		}
 	}
+
+	@media (min-width: $md) {
+
+		&::before {
+			left: initial;
+			right: 0;
+			width: 49%;
+		}
+
+		&::after {
+			background-color: $black-2;
+			width: calc(51.2821% + 65px);
+		}
+
+		&-wrap {
+			display: flex;
+		}
+
+		&__content {
+			padding-right: 1.2821%;
+		}
+
+		&__img {
+
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&-wrap {
+				margin-bottom: 0;
+				display: flex;
+				width: 42.735%;
+				margin-left: 0;
+			}
+		}
+
+		&__content {
+			width: 51.2821%;
+			margin-left: 0;
+		}
+	}
+
+	@media (min-width: $lg) {
+		&__img-wrap,
+		&__content {
+			width: 100%;
+		}
+	}
+
+
 }
+
+
+.service {
+
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 3.25rem;
+	}
+
+	&::after {
+		@extend .color--primary;
+		position: absolute;
+		bottom: -1.25rem;
+		right: 0;
+		font-family: 'iconfont';
+		font-size: 6rem;
+		line-height: 1;
+		opacity: .15;
+	}
+
+	&--development::after {
+		content: '\e956';
+	}
+
+	&--support::after {
+		content: '\e900';
+	}
+
+	&--solutions::after {
+		content: '\e995';
+	}
+
+	&--expertise::after {
+		content: '\e9af';
+	}
+
+	&__title {
+		@extend .sumbtitle-services;
+	}
+
+	&__txt {
+		@extend .txt-nm, .color--warm-grey;
+		text-align: right;
+	}
+
+	@media (min-width: $md) {
+		&::after {
+			top: calc(50% - 32px); //center of section 'service': 50% - height of icon / 2 -- > 64/2=32
+			right: calc(-95px - 1.2821vw); //grid 30*65 --> 30+65 = 95px + padding 1.2821% (vw)
+			font-size: 1.5rem;
+			text-align: center;
+			line-height: 64px;
+			opacity: 1;
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+			background-color: $white;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: calc(50% - 37px); //the same as ::after el
+			right: calc(-100px - 1.2821vw); //100px --> 95px + (height of icon / 2(64/2) - height of shadow/2 (74/2))
+			width: 74px;
+			height: 74px;
+			border-radius: 50%;
+			background-color: rgba($white, .25);
+		}
+	}
+}
+
+
+

@@ -9,8 +9,8 @@
 }
 
 .section-gap {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 
 	@media (min-width: $md) {
 		padding-top: 100px;
@@ -45,6 +45,7 @@ body {
 	min-width: 320px;
 	margin: 0 auto;
 }
+
 
 
 //colors, borders
@@ -164,7 +165,6 @@ p {
   margin-bottom: 1.25rem;
 }
 
-
 .subtitle-contact {
 	@extend .color--primary;
 	font-family: $font-secondary;
@@ -177,7 +177,11 @@ p {
 	@extend .color--primary;
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .txt-contact {
@@ -186,13 +190,26 @@ p {
   line-height: 1.33;
 }
 
+.txt-nm {
+	font-size: 1rem;
+	line-height: 2.07;
+
+	@media (min-width: $md) {
+		font-size: .875rem;
+	}
+}
+
 .txt-nm--light {
 	@extend .color--warm-grey;
 	font-family: $font-secondary;
-  font-size: .875rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.71;
   letter-spacing: 1.1px;
+
+	@media (min-width: $md) {
+		font-size: .875rem;
+	}
 }
 
 .txt-footer {
@@ -212,11 +229,6 @@ p {
 .txt-nav {
 	@extend .color--pale-grey;
   font-size: .875rem;
-}
-
-.txt-nm {
-	font-size: .875rem;
-	line-height: 2.07;
 }
 
 .txt--sm {
