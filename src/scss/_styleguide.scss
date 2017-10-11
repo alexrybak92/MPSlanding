@@ -29,13 +29,12 @@
 	box-sizing: border-box;
 }
 
-
 html {
 	font-family: $font-primary;
 	font-size: 14px;
 	line-height: 1.4;
 
-	@media (min-width: $md){
+	@media (min-width: $md) {
 		font-size: 16px;
 	}
 
@@ -77,7 +76,6 @@ body {
 	color: $warm-grey-075;
 }
 
-
 //backgrounds
 .bg--primary {
 	background-color: $primary;
@@ -103,7 +101,6 @@ body {
 .bb--silver {
 	background-color: 1px solid $silver;
 }
-
 
 //shadows
 .shadow-form {
@@ -134,11 +131,16 @@ p {
 
 .txt-promo--lg {
 	@extend .color--pale-grey;
-  font-size: 4.5rem;
   font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: 7.2px;
   text-align: center;
+	font-size: 1.65rem;
+	letter-spacing: 3.5px;
+	line-height: 1.5;
+
+	@media (min-width: $md) {
+		font-size: 4.5rem;
+		letter-spacing: 7.2px;
+	}
 }
 
 .txt-promo--nm {
@@ -152,19 +154,24 @@ p {
 
 .txt-promo--sm {
 	@extend .color--pinkish-grey;
-  font-size: .875rem;
-  line-height: 1.71;
+
   text-align: center;
+	font-size: 1.2rem;
+	letter-spacing: 1.2px;
+	@media (min-width: $md) {
+		font-size: .875rem;
+		line-height: 1.71;
+	}
 }
 
 .title-section {
-  font-family: $font-secondary;
-  font-size: 2.25rem;
-  line-height: 1.2;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 1.25rem;
+	font-family: $font-secondary;
+	font-size: 2.25rem;
+	line-height: 1.2;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 1.25rem;
 }
 
 .subtitle-contact {
@@ -230,6 +237,11 @@ p {
 .txt-nav {
 	@extend .color--pale-grey;
   font-size: .875rem;
+}
+
+.txt-nm {
+	font-size: .875rem;
+	line-height: 2.07;
 }
 
 .txt--sm {
