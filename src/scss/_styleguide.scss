@@ -136,6 +136,7 @@ p {
 	@extend .color--pale-grey;
   font-size: 4.5rem;
   font-weight: bold;
+  line-height: 1.2;
   letter-spacing: 7.2px;
   text-align: center;
 }
@@ -144,6 +145,7 @@ p {
 	@extend .color--pale-grey;
   font-family: $font-secondary;
   font-size: 1.5rem;
+  text-transform: capitalize;
   letter-spacing: 1.2px;
   text-align: center;
 }
