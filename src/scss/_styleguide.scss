@@ -131,22 +131,37 @@ p {
 
 .txt-promo--lg {
 	@extend .color--pale-grey;
-	font-weight: bold;
-	text-align: center;
+  font-weight: bold;
+  text-align: center;
+	font-size: 1.65rem;
+	letter-spacing: 3.5px;
+	line-height: 1.5;
+
+	@media (min-width: $md) {
+		font-size: 4.5rem;
+		letter-spacing: 7.2px;
+	}
 }
 
 .txt-promo--nm {
 	@extend .color--pale-grey;
-	font-family: $font-secondary;
-	font-size: 1.5rem;
-	letter-spacing: 1.2px;
-	text-align: center;
+  font-family: $font-secondary;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  text-align: center;
 }
 
 .txt-promo--sm {
 	@extend .color--pinkish-grey;
-	font-size: .875rem;
-	line-height: 1.71;
+
+  text-align: center;
+	font-size: 1.2rem;
+	letter-spacing: 1.2px;
+	@media (min-width: $md) {
+		font-size: .875rem;
+		line-height: 1.71;
+	}
 }
 
 .title-section {
@@ -162,9 +177,9 @@ p {
 .subtitle-contact {
 	@extend .color--primary;
 	font-family: $font-secondary;
-	font-size: 1.5rem;
-	font-weight: 600;
-	line-height: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .sumbtitle-services {
@@ -180,8 +195,8 @@ p {
 
 .txt-contact {
 	@extend .color--warm-grey;
-	font-size: 1.125rem;
-	line-height: 1.33;
+  font-size: 1.125rem;
+  line-height: 1.33;
 }
 
 .txt-nm {
@@ -268,7 +283,7 @@ p {
 		background-color: $hover-color;
 	}
 
-	&:active {
+	&:active{
 		background-color: $active-color;
 	}
 

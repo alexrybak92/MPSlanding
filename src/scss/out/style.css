@@ -701,19 +701,24 @@ p {
 .promo__title {
   font-weight: bold;
   text-align: center;
+  font-size: 1.65rem;
+  letter-spacing: 3.5px;
+  line-height: 1.5;
 }
 
 .txt-promo--nm,
 .promo__subtitle {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5rem;
+  text-transform: capitalize;
   letter-spacing: 1.2px;
   text-align: center;
 }
 
 .txt-promo--sm {
-  font-size: .875rem;
-  line-height: 1.71;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
 }
 
 .title-section,
@@ -847,7 +852,8 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   height: calc(100vh - 32px);
-  padding-bottom: 40px;
+  padding-top: 45px;
+  padding-bottom: 34px;
   background: #234585 url(./../img/promo-bg.jpg) center no-repeat;
   background-size: cover;
 }
@@ -915,18 +921,19 @@ p {
 }
 
 .promo .promo__desc {
-  font-size: 1.2rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 1rem;
 }
 
 .promo__bottom-text {
   position: relative;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   color: #fff;
-  z-index: 2;
+  padding-bottom: 15vh;
+  z-index: 1;
 }
 
 .promo__bottom-circle {
@@ -940,6 +947,8 @@ p {
   border-radius: 50%;
   background-color: #f4f5f9;
   z-index: 1;
+  -webkit-animation: rotation 1.5s linear infinite;
+  animation: rotation 1.5s linear infinite;
 }
 
 .promo__bottom-circle::before {
@@ -1082,6 +1091,7 @@ p {
   background-color: transparent;
   border: none;
   z-index: 20;
+  cursor: pointer;
 }
 
 .menu__toggle:focus {
@@ -1159,21 +1169,17 @@ p {
   transition: opacity .25s .25s, transform .5s, -webkit-transform .5s;
 }
 
-.menu__item:last-child .menu__link {
-  padding-right: 0;
-}
-
 .menu__link {
   position: relative;
   display: inline-block;
   padding: 0 10px;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 2.5;
   color: #fff;
   text-decoration: none;
   letter-spacing: 1.2px;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .menu__link::before {
@@ -1181,14 +1187,31 @@ p {
   position: absolute;
   background-color: transparent;
   height: 1px;
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+  opacity: .7;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.menu__link:hover {
-  color: #8f8f8f;
+.menu__link:hover::before {
+  background-color: #fff;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .menu__link:active {
   color: #1c6df2;
+}
+
+.menu__link:active::before {
+  background: #1c6df2;
 }
 
 .menu__link--active {
@@ -1197,13 +1220,17 @@ p {
 
 .menu__link--active::before {
   background-color: #4c8cf5;
-  right: 10px;
-  left: 10px;
-  bottom: 2px;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .menu__link--active:hover {
   color: #4c8cf5;
+}
+
+.menu__link--active:hover::before {
+  background-color: #4c8cf5;
 }
 
 .services {
@@ -1363,6 +1390,17 @@ p {
     font-size: 16px;
   }
 
+  .txt-promo--lg,
+  .promo__title {
+    font-size: 4.5rem;
+    letter-spacing: 7.2px;
+  }
+
+  .txt-promo--sm {
+    font-size: .875rem;
+    line-height: 1.71;
+  }
+
   .txt-nm,
   .service__txt,
   .about__txt,
@@ -1372,6 +1410,10 @@ p {
 
   .txt-nm--light {
     font-size: .875rem;
+  }
+
+  .promo .promo__desc {
+    font-size: 1.2rem;
   }
 
   .header {
@@ -1425,16 +1467,21 @@ p {
   .menu__item {
     display: inline-block;
     vertical-align: top;
+    margin: 0 25px;
   }
 
-  .menu__link--active::before {
-    right: 25px;
-    left: 25px;
+  .menu__item:last-child {
+    margin-right: 0;
+  }
+
+  .menu__link::before {
+    right: 0;
+    left: 0;
     bottom: 12px;
   }
 
   .menu__link {
-    padding: 0 25px;
+    padding: 0;
     font-size: 14px;
     text-transform: uppercase;
     line-height: 60px;
@@ -1552,5 +1599,11 @@ p {
   .about__img-wrap,
   .about__content {
     width: 100%;
+  }
+}
+
+@media (max-height: 735px) {
+  .promo__bottom-text {
+    padding-bottom: 10vh;
   }
 }
