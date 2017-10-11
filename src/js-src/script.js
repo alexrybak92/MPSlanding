@@ -13,3 +13,7 @@ $(function () {
     }
   });
 });
+
+
+var currentYear = (new Date).getFullYear();
+$(".js-get-current-year").text(currentYear);
