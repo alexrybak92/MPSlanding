@@ -29,13 +29,12 @@
 	box-sizing: border-box;
 }
 
-
 html {
 	font-family: $font-primary;
 	font-size: 14px;
 	line-height: 1.4;
 
-	@media (min-width: $md){
+	@media (min-width: $md) {
 		font-size: 16px;
 	}
 
@@ -45,7 +44,6 @@ body {
 	min-width: 320px;
 	margin: 0 auto;
 }
-
 
 //colors, borders
 .color--primary {
@@ -76,7 +74,6 @@ body {
 	color: $warm-grey-075;
 }
 
-
 //backgrounds
 .bg--primary {
 	background-color: $primary;
@@ -103,7 +100,6 @@ body {
 	background-color: 1px solid $silver;
 }
 
-
 //shadows
 .shadow-form {
 	box-shadow: 0px 5px 5px 0 $black-010;
@@ -123,8 +119,6 @@ body {
 	}
 }
 
-
-
 //typograohy
 p {
 	margin-top: 0;
@@ -133,85 +127,81 @@ p {
 
 .txt-promo--lg {
 	@extend .color--pale-grey;
-  font-size: 4.5rem;
-  font-weight: bold;
-  letter-spacing: 7.2px;
-  text-align: center;
+	font-weight: bold;
+	text-align: center;
 }
 
 .txt-promo--nm {
 	@extend .color--pale-grey;
-  font-family: $font-secondary;
-  font-size: 1.5rem;
-  letter-spacing: 1.2px;
-  text-align: center;
+	font-family: $font-secondary;
+	font-size: 1.5rem;
+	letter-spacing: 1.2px;
+	text-align: center;
 }
 
 .txt-promo--sm {
 	@extend .color--pinkish-grey;
-  font-size: .875rem;
-  line-height: 1.71;
-  text-align: center;
+	font-size: .875rem;
+	line-height: 1.71;
 }
 
 .title-section {
-  font-family: $font-secondary;
-  font-size: 2.25rem;
-  line-height: 1.2;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 1.25rem;
+	font-family: $font-secondary;
+	font-size: 2.25rem;
+	line-height: 1.2;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 1.25rem;
 }
-
 
 .subtitle-contact {
 	@extend .color--primary;
 	font-family: $font-secondary;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1;
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1;
 }
 
 .sumbtitle-services {
 	@extend .color--primary;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.6;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.6;
 }
 
 .txt-contact {
 	@extend .color--warm-grey;
-  font-size: 1.125rem;
-  line-height: 1.33;
+	font-size: 1.125rem;
+	line-height: 1.33;
 }
 
 .txt-nm--light {
 	@extend .color--warm-grey;
 	font-family: $font-secondary;
-  font-size: .875rem;
-  font-weight: 300;
-  line-height: 1.71;
-  letter-spacing: 1.1px;
+	font-size: .875rem;
+	font-weight: 300;
+	line-height: 1.71;
+	letter-spacing: 1.1px;
 }
 
 .txt-footer {
 	@extend .color--warm-grey-075;
-  font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.71;
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.71;
 }
 
 .txt-form {
 	@extend .color--warm-grey;
-  font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.71;
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.71;
 }
 
 .txt-nav {
 	@extend .color--pale-grey;
-  font-size: .875rem;
+	font-size: .875rem;
 }
 
 .txt-nm {
@@ -221,11 +211,11 @@ p {
 
 .txt--sm {
 	@extend .color--warm-grey;
-  font-family: $font-secondary;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.67;
-  letter-spacing: 0.9px;
+	font-family: $font-secondary;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.67;
+	letter-spacing: 0.9px;
 }
 
 .txt--bold {
@@ -239,10 +229,10 @@ p {
 	cursor: pointer;
 	text-transform: uppercase;
 	text-decoration: none;
-  font-size: .875rem;
-  font-weight: bold;
-  letter-spacing: 0.1px;
-  text-align: center;
+	font-size: .875rem;
+	font-weight: bold;
+	letter-spacing: 0.1px;
+	text-align: center;
 	line-height: 4;
 	padding-left: 2.25rem;
 	padding-right: 2.25rem;
@@ -257,7 +247,7 @@ p {
 		background-color: $hover-color;
 	}
 
-	&:active{
+	&:active {
 		background-color: $active-color;
 	}
 
