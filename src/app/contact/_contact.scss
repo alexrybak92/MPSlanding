@@ -1,0 +1,158 @@
+.contact {
+	@extend  .bg--pale-grey;
+
+	&-wrap {
+		@extend .wrapper, .section-gap;
+	}
+
+	&__title {
+		@extend .title-section, .color--brownish-grey;
+		text-align: center;
+	}
+
+	&__txt {
+		@extend .txt-nm, .color--warm-grey;
+		text-align: center;
+		max-width: 620px;
+		margin-left: auto;
+		margin-right: auto;
+
+		&:last-child {
+			margin-bottom: 1.75rem;
+		}
+	}
+
+	&__content {
+		width: 100%;
+		position: relative;
+		margin-bottom: 4.375rem;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			height: 2px;
+			@extend .bg--primary;
+		}
+	}
+
+	&__address {
+		margin-bottom: 35px;
+	}
+
+	@media (min-width: $md) {
+
+		&-wrap {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		&__content {
+
+			&::after {
+				width: 100px;
+			}
+		}
+
+		&__address {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.address,
+.form-wrap {
+
+	max-width: 475px;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@extend .bg--white, .shadow-contact;
+	padding: 50px 30px;
+
+	@media (min-width: $md){
+		margin-left: initial;
+		margin-right: initial;
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+}
+
+
+.address {
+
+	&__title {
+		@extend .subtitle-contact;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 4.375rem;
+		}
+	}
+
+	@media (min-width: $md){
+		width: 40.5981%;
+		padding-left: 90px;
+		padding-right: 90px;
+	}
+}
+
+.form {
+
+	&-wrap {
+		@media (min-width: $md){
+			width: 56.8376%;
+			max-width: 665px;
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+	}
+
+	&__label {
+		@extend .txt-form;
+		display: block;
+		margin-bottom: 1.875rem;
+	}
+
+	&__input-title {
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		width: 100%;
+		transform: translateY(10px);
+		transition: all .3s ease-in-out;
+
+		&--focused {
+			transform: translateY(0);
+			color: $primary;
+		}
+	}
+
+
+
+	&__input {
+		position: relative;
+		z-index: 2;
+		background-color: transparent;
+		@extend .txt-form;
+		display: inline-block;
+		width: 100%;
+		border: 0;
+		border-bottom: solid 0.5px $warm-grey;
+		outline: 0;
+		transition: all .3s ease-in-out;
+
+		&:focus {
+			border-bottom-color: $primary;
+		}
+	}
+
+	&__btn {
+		@extend .btn;
+	}
+}
