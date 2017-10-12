@@ -27,8 +27,6 @@ gulp.task('pug', function buildHTML() {
         title  : "Pug Error!"
       }))
     )
-		// .pipe(pug()
-		// )
     .pipe(gulp.dest('src'))
     .pipe(browserSync.reload({stream: true}))
 });

@@ -3,4 +3,4 @@ node_modules/
 /src/index.html
 /src/scss/out/style.css
 /src/css/style.min.css
-
+/src/js/script.min.js
