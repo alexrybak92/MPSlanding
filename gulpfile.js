@@ -61,8 +61,12 @@ gulp.task('sass', function(){
 // });
 gulp.task('scripts', function(){
 	return gulp.src('src/js-src/**/*.js')
-	.pipe(uglify())
-	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+	.pipe(uglify().on('error', notify.onError(
+    {
+      message: "<%= error.message %>",
+      title  : "JSmin Error!"
+    }))
+	)
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('src/js'))
 	.pipe(browserSync.reload({stream: true}))

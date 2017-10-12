@@ -1,0 +1,42 @@
+article.contact
+	.contact-wrap
+
+		.contact__content
+			h2.contact__title Contact us
+			p.contact__txt If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.
+
+		.contact__address.address
+			section.address__item
+				h3.address__title Our address
+				p.txt-contact
+					span.d-b.txt--bold Office&nbsp;1
+					span.d-b Ukraine
+					span.d-b 03150&nbsp;Kiev, Tvesrkaya str&nbsp;6
+				p.txt-contact
+					span.d-b.txt--bold Office&nbsp;1
+					span.d-b Ukraine
+					span.d-b 03150&nbsp;Kiev, Tvesrkaya str&nbsp;6
+			section.address__item
+				h3.address__title Call us
+				p.txt-contact
+					a.d-b.txt-contact(href='tel:+380953430467')
+						span.txt--bold UA:
+						span &nbsp;+38 095 343 04 67
+					a.d-b.txt-contact(href='tel:+13233750718')
+						span.txt--bold USA:
+						span &nbsp;+1 323 375 07 18
+
+		.contact__form.form-wrap
+			form.form#contactform
+				mixin inputItem(inputTitle, inutType, inputName)
+					label.form__label
+						span.form__input-title= inputTitle
+						input(type= inutType, name= inputName, autocomplete='off', required).form__input
+				+inputItem('Name', 'text', 'name')
+				+inputItem('Email', 'email', 'email')
+				+inputItem('Phone', 'tel', 'phone')
+				+inputItem('Subject', 'text', 'subject')
+				label.form__label
+						span.form__input-title Message
+						textarea.form__message(name='message' autocomplete='off' required).form__input
+				button.form__btn Send message
