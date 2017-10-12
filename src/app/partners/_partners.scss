@@ -1,0 +1,55 @@
+.partners {
+	&__inner {
+		@extend .wrapper, .section-gap;
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 40px;
+
+
+		@media (min-width: $sm) {
+			padding-bottom: 70px;
+		}
+		@media (min-width: $md) {
+			padding-bottom: 90px;
+		}
+		@media (min-width: $lg) {
+			padding-bottom: 120px;
+		}
+	}
+
+	&__title {
+		@extend .title-section, .color--brownish-grey;
+		position: relative;
+		margin-bottom: 4.375rem;
+		text-align: center;
+		color: $brownish-grey;
+	}
+	.partners__list {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	&__link {
+		@extend .shadow-partners;
+		height: 100px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 3px 15px;
+		margin-bottom: 30px;
+		padding: 10px 28px;
+		font-size: 0;
+		&:hover {
+			background-color: $primary;
+		}
+		&:focus {
+			outline: none;
+		}
+
+		img {
+			max-width: 155px;
+			vertical-align: middle;
+		}
+	}
+}
