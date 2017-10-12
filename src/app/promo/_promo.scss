@@ -37,7 +37,7 @@
 		bottom: 0;
 		left: 0;
 		top: 0;
-		background-color: #000;
+		background-color: $black;
 		opacity: .5;
 	}
 
@@ -55,9 +55,15 @@
 	&__title {
 		position: relative;
 		@extend .txt-promo--lg;
-		margin-top: 10px;
+		margin-top: 0;
 		margin-bottom: 0;
-		padding-bottom: 2.46rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		@media (min-width: $md) {
+			padding-bottom: 3rem;
+			margin-bottom: 3rem;
+		}
 
 		span {
 			display: block;
@@ -80,7 +86,6 @@
 
 	&__subtitle {
 		@extend .txt-promo--nm;
-		margin: 0;
 	}
 
 	.promo__desc {
@@ -89,25 +94,15 @@
 		font-size: 1rem;
 		@media (min-width: $md) {
 			font-size: 1.2rem;
-
 		}
-	}
-
-	.promo__sub-desc {
 	}
 
 	&__bottom-text {
-		position: relative;
 		margin-right: auto;
 		margin-left: auto;
 		text-align: center;
-		color: #fff;
-		padding-bottom: 15vh;
+		color: $pale-grey;
 
-		z-index: 1;
-		@media (max-height: 735px) {
-			padding-bottom: 10vh;
-		}
 
 	}
 
@@ -118,7 +113,7 @@
 		margin-left: -32px;
 		width: 64px;
 		height: 64px;
-		border: 5px solid rgba(255, 255, 255, .5);
+		border: 5px solid rgba($black-2, .05);
 		border-radius: 50%;
 		background-color: $pale-grey;
 		z-index: 1;
@@ -267,7 +262,7 @@
 		width: 30px;
 		height: 3px;
 		vertical-align: bottom;
-		background-color: #ffffff;
+		background-color: $pale-grey;
 		transition: background .3s .5s;
 
 		&::before,
@@ -278,7 +273,7 @@
 			right: 0;
 			width: 100%;
 			height: 3px;
-			background-color: #fff;
+			background-color: $pale-grey;
 			transform-origin: 50% 50%;
 			transition: top .3s .3s, transform .3s;
 		}
@@ -309,7 +304,7 @@
 		padding-left: 15px;
 		padding-bottom: 60px;
 		overflow-y: auto;
-		background: linear-gradient(to bottom, $black-2, rgba(255, 255, 255, 0.95));
+		background: linear-gradient(to bottom, $black-2, rgba($pinkish-grey, 0.95));
 		transition: .20s opacity;
 
 		@media (min-width: $md) {
@@ -356,7 +351,7 @@
 		padding: 0 10px;
 		font-size: 20px;
 		line-height: 2.5;
-		color: #fff;
+		color: $pale-grey;
 		text-decoration: none;
 		letter-spacing: 1.2px;
 		transition: .5s;
@@ -387,7 +382,7 @@
 		&:hover {
 
 			&::before {
-				background-color: #fff;
+				background-color: $pale-grey;
 				opacity: 1;
 				transform: scale(1);
 			}
