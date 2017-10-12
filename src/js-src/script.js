@@ -22,10 +22,18 @@ $(".js-get-current-year").text(currentYear);
 
 // });
 
-$('.form__input').focusin(function(){
-  $(this).prev('.form__input-title').toggleClass('form__input-title--focused');
+
+
+var formInput = $('.form__input');
+
+formInput.focusin(function(){
+  $(this).addClass('form__input--focused');
+  $(this).prev('.form__input-title').addClass('form__input-title--focused');
 });
 
-$('.form__input').focusout(function(){
-  $(this).prev('.form__input-title').removeClass('form__input-title--focused');
+formInput.focusout(function(){
+  if ($(this).val() == 0) {
+    $(this).removeClass('form__input--focused');
+    $(this).prev('.form__input-title').removeClass('form__input-title--focused');
+  };
 });
