@@ -1,4 +1,7 @@
 .partners {
+	background-color: $pale-grey;
+	border-bottom: 1px solid $silver;
+
 	&__inner {
 		@extend .wrapper, .section-gap;
 		padding-right: 0;
@@ -40,6 +43,8 @@
 		margin-bottom: 30px;
 		padding: 10px 28px;
 		font-size: 0;
+		background-color: #fff;
+
 		&:hover {
 			background-color: $primary;
 		}

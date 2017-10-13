@@ -9,10 +9,8 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background-image: url('../img/services-bg.png');
-		background-repeat: no-repeat;
+		background: #402d26 url('../img/services-bg.png') center no-repeat;
 		background-size: cover;
-		background-position: center;
 	}
 
 	&::after {
@@ -22,7 +20,7 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background-color: rgba($black-2 , .95);
+		background: rgba($black-2 , .95)  url(../img/pattern_dots.png);
 	}
 
 	&-wrap {

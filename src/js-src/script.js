@@ -49,6 +49,27 @@ $(function () {
   });
 });
 
+$('.js-works').slick({
+  mobileFirst: true,
+  centerPadding: 0,
+  arrows: false,
+  rows: 2,
+  slidesToShow: 2,
+  responsive: [
+    {
+    breakpoint: 959,
+    settings: {
+      slidesToShow: 4
+    }
+
+  },
+    {
+      breakpoint: 659,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+});
 
 var currentYear = (new Date).getFullYear();
 $(".js-get-current-year").text(currentYear);
