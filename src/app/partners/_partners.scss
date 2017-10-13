@@ -23,11 +23,15 @@
 	&__title {
 		@extend .title-section, .color--brownish-grey;
 		position: relative;
-		// margin-bottom: 4.375rem;
 		text-align: center;
 		color: $brownish-grey;
 	}
-	.partners__list {
+
+	&__txt {
+		@extend .txt-nm, .color--warm-grey, .content-max-width;
+	}
+
+	&__list {
 		list-style-type: none;
 		padding: 0;
 	}

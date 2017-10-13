@@ -1,6 +1,14 @@
 .works {
 	@extend .section-gap;
 
+	&__title {
+		@extend .title-section, .color--brownish-grey;
+		text-align: center;
+	}
+	&__txt {
+		@extend .txt-nm, .color--warm-grey, .content-max-width;
+	}
+
 	&__list {
 		@extend .wrapper;
 		list-style-type: none;
