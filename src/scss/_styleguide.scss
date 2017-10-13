@@ -301,3 +301,28 @@ p {
 .d-b {
 	display: block;
 }
+
+//decoration
+
+//section-content-underlined
+.content--underlined {
+	position: relative;
+	margin-bottom: 4.375rem;
+
+	&::after {
+		content: '';
+		display: block;
+		width: 50px;
+		margin-top: 1.75rem;
+		margin-left: auto;
+		margin-right: auto;
+		height: 2px;
+		@extend .bg--primary;
+	}
+
+	@media (min-width: $md) {
+		&::after {
+			width: 100px;
+		}
+	}
+}

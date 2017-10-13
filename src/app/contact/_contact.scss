@@ -16,26 +16,11 @@
 		max-width: 620px;
 		margin-left: auto;
 		margin-right: auto;
-
-		&:last-child {
-			margin-bottom: 1.75rem;
-		}
 	}
 
 	&__content {
 		width: 100%;
-		position: relative;
-		margin-bottom: 4.375rem;
-
-		&::after {
-			content: '';
-			display: block;
-			width: 50px;
-			margin-left: auto;
-			margin-right: auto;
-			height: 2px;
-			@extend .bg--primary;
-		}
+		@extend .content--underlined;
 	}
 
 	&__address {
@@ -48,13 +33,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-		}
-
-		&__content {
-
-			&::after {
-				width: 100px;
-			}
 		}
 
 		&__address {
