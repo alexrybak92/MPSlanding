@@ -1,0 +1,29 @@
+.slogan {
+	background-image: linear-gradient(to top, rgba($black, .7), rgba($black, .7)),
+										url(../img/slogan-bg.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+
+	&-wrap {
+		@extend .wrapper, .section-gap;
+	}
+
+	&__title {
+		@extend .title-section, .color--pale-grey;
+		text-align: center;
+	}
+
+	&__subtitle {
+		@extend .color--pale-grey-2;
+		text-transform: uppercase;
+		font-size: 1.45rem;
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&__txt {
+		@extend .txt-nm, .color--pale-grey, .content-max-width;
+	}
+
+}

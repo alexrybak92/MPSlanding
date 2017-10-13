@@ -77,6 +77,7 @@
 		@extend .txt-promo--lg;
 		margin-top: 0;
 		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
 
 		@media (min-width: $md) {
 			margin-bottom: 3rem;
@@ -324,7 +325,7 @@
 		visibility: hidden;
 		opacity: 0;
 		overflow-y: auto;
-		background: linear-gradient(to bottom, $black-2, rgba($pinkish-grey, 0.95));
+		background: linear-gradient(to bottom, $black-2, $pinkish-grey);
 		transition: .20s opacity;
 
 		@media (min-width: $md) {

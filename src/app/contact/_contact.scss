@@ -11,11 +11,7 @@
 	}
 
 	&__txt {
-		@extend .txt-nm, .color--warm-grey;
-		text-align: center;
-		max-width: 620px;
-		margin-left: auto;
-		margin-right: auto;
+		@extend .txt-nm, .color--warm-grey, .content-max-width;
 	}
 
 	&__content {
