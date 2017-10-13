@@ -5,38 +5,58 @@
 	height: calc(100vh - 32px);
 	padding-top: 45px;
 	padding-bottom: 34px;
-	background: #234585 url(./../img/promo-bg.jpg) center no-repeat;
-	background-size: cover;
-	//animation: zoom 20s ease infinite alternate;
 
+	&__bg {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		overflow: hidden;
 
-	&::before {
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			top: 0;
+		}
+		&::before {
+			background-size: cover;
+			animation: zoom 10s ease infinite alternate;
+			background: #234585 url(./../img/promo-bg.jpg) no-repeat fixed center;
+		}
+		&::after {
+			background: rgba(32, 32, 32, .6) url(../img/pattern_dots.png);
+		}
+
+		@keyframes zoom {
+			to {
+				transform: scale(1.3)
+			}
+		}
+	}
+
+	&::before,
+	&::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		left: 0;
+
+	}
+
+	&::before {
 		height: 6vw;
 		background: url(./../img/bg-triangle-bottom.svg) top center no-repeat;
 		background-size: auto 103%;
 		z-index: 1;
 	}
 
-
-	@keyframes zoom {
-		to {
-			transform: scale(1.3)
-		}
-	}
-
 	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		top: 0;
 		background-color: $black;
 		opacity: .5;
 	}
@@ -56,19 +76,16 @@
 		position: relative;
 		@extend .txt-promo--lg;
 		margin-top: 0;
-		margin-bottom: 0;
-		padding-bottom: 1.5rem;
 		margin-bottom: 1.5rem;
 
 		@media (min-width: $md) {
-			padding-bottom: 3rem;
 			margin-bottom: 3rem;
+			padding-bottom: 3rem;
 		}
 
 		span {
 			display: block;
 		}
-
 
 		&::before {
 			content: '';
@@ -81,6 +98,7 @@
 			margin-right: auto;
 			margin-left: auto;
 			background-color: $primary;
+
 			@media (min-width: $md) {
 				width: 100px;
 			}
@@ -95,6 +113,7 @@
 		padding-right: 15px;
 		padding-left: 15px;
 		font-size: 1rem;
+
 		@media (min-width: $md) {
 			font-size: 1.2rem;
 		}
@@ -105,34 +124,33 @@
 		margin-left: auto;
 		text-align: center;
 		color: $pale-grey;
-
-
 	}
 
 	&__bottom-circle {
 		position: absolute;
 		bottom: -32px;
 		left: 50%;
-		margin-left: -32px;
 		width: 64px;
 		height: 64px;
+		margin-left: -32px;
 		border: 5px solid rgba($black-2, .05);
 		border-radius: 50%;
 		background-color: $pale-grey;
 		z-index: 1;
 		animation: rotation 1.5s linear infinite;
+
 		&::before {
 			content: '';
 			position: absolute;
 			top: 5px;
 			left: 50%;
-			margin-left: -17px;
 			width: 34px;
 			height: 34px;
+			margin-left: -17px;
 			background: url(./../img/propeller.svg) center no-repeat;
-
 		}
 	}
+
 	@keyframes rotation {
 		from {
 			transform: rotate(0deg);
@@ -143,14 +161,13 @@
 	}
 }
 
-
 .header {
 	position: fixed;
 	right: 0;
 	left: 0;
 	top: 0;
 	height: 60px;
-	z-index: 2;
+	z-index: 3;
 	transition: .35s, box-shadow 250ms;
 
 	@media (min-width: $md) {
@@ -294,8 +311,6 @@
 	}
 
 	&__dropdown {
-		opacity: 0;
-		visibility: hidden;
 		display: flex;
 		position: fixed;
 		top: 60px;
@@ -306,6 +321,8 @@
 		padding-right: 15px;
 		padding-left: 15px;
 		padding-bottom: 60px;
+		visibility: hidden;
+		opacity: 0;
 		overflow-y: auto;
 		background: linear-gradient(to bottom, $black-2, rgba($pinkish-grey, 0.95));
 		transition: .20s opacity;
@@ -317,15 +334,14 @@
 			visibility: visible;
 			opacity: 1;
 			background: transparent;
-			padding-bottom: 0;
 		}
 
 	}
 
 	&__list {
-		list-style-type: none;
-		padding: 0;
 		margin: auto;
+		padding: 0;
+		list-style-type: none;
 		opacity: 0;
 		transform: translateY(200px);
 		transition: opacity .25s .25s, transform .5s;
@@ -340,8 +356,8 @@
 	&__item {
 		@media (min-width: $md) {
 			display: inline-block;
-			vertical-align: top;
 			margin: 0 25px;
+			vertical-align: top;
 
 			&:last-child {
 				margin-right: 0;
@@ -363,10 +379,10 @@
 			content: '';
 			position: absolute;
 			background-color: transparent;
-			height: 1px;
 			right: 10px;
 			left: 10px;
 			bottom: 10px;
+			height: 1px;
 			opacity: .9;
 			transform: scale(0);
 			transform-origin: 0;
@@ -383,7 +399,6 @@
 		}
 
 		&:hover {
-
 			&::before {
 				background-color: $pale-grey;
 				opacity: 1;
@@ -423,8 +438,6 @@
 			text-transform: uppercase;
 			line-height: 60px;
 			letter-spacing: normal;
-
-
 		}
 	}
 }
