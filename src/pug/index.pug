@@ -1,18 +1,19 @@
 doctype html
-html(lang="ua")
+html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(name="keywords", content="")
 		meta(name="description", content="")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		-//Chrome Firefox Opera
+		//- Chrome Firefox Opera
 		meta(name="theme-color", content="#4C8CF5")
-		-//Windows Phone
+		//- Windows Phone
 		meta(name="msapplication-navbutton-color", content="#4C8CF5")
-		-//Apple
+		//- Apple
 		meta(name="apple-mobile-web-app-status-bar-style", content="#4C8CF5")
+		title MPS Development | Full stack development service
 		link(rel="shortcut icon", href="img/fav.png")
-		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Sans+Pro:300,400,600,700" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CSource+Sans+Pro:300,400,600,700" rel="stylesheet")
 		link(href="css/style.min.css", rel="stylesheet")
 	body
 		include ../app/promo/_promo.pug
@@ -23,8 +24,11 @@ html(lang="ua")
 			include ../app/works/_works.pug
 			include ../app/team/_team.pug
 			include ../app/partners/_partners.pug
+			include ../app/slogan/_slogan.pug
 			include ../app/contact/_contact.pug
-			include ../app/footer/_footer.pug
+			include ../app/map/_map.pug
+		include ../app/footer/_footer.pug
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 		script(src="js/slick.min.js")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx4xb6X3JgGSvTirMN1IZnAzBtD42eIeI&callback=initMap" async defer)
 		script(src="js/script.min.js")

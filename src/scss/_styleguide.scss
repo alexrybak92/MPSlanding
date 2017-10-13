@@ -64,6 +64,10 @@ body {
 	color: $pale-grey;
 }
 
+.color--pale-grey-2 {
+	color: $pale-grey-2;
+}
+
 .color--pinkish-grey {
 	color: $pinkish-grey;
 }
@@ -99,7 +103,7 @@ body {
 }
 
 .bb--silver {
-	background-color: 1px solid $silver;
+	border-bottom: 1px solid $silver;
 }
 
 //shadows
@@ -267,6 +271,12 @@ p {
 	font-weight: 600;
 }
 
+.content-max-width {
+	max-width: 620px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 //buttons
 .btn {
 	@extend .bg--primary, .color--white;

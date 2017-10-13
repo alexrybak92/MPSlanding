@@ -23,8 +23,8 @@
 	@media (min-width: $md) {
 
 		&-wrap {
-			padding-top: 35px;
-			padding-bottom: 35px;
+			padding-top: 20px;
+			padding-bottom: 20px;
 		}
 	}
 }
@@ -55,7 +55,8 @@
 
 		&::before {
 			font-family: 'iconfont';
-			font-size: 22px;
+			font-size: 24px;
+			line-height: 44px;
 			transition: all .3s ease-in-out;
 		}
 	}
@@ -103,6 +104,12 @@
 			&:first-child {
 				margin-left: -10px;
 			}
+
+			&::before {
+				font-size: 22px;
+				line-height: 1;
+			}
+
 		}
 	}
 }
