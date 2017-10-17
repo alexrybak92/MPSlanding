@@ -140,8 +140,8 @@ gulp.task('build', ['img', 'sass', 'scripts'], function(){
 		.pipe(gulp.dest('www'))
 
 	var buildImg = gulp.src([
-		'src/images/**'])
-		.pipe(gulp.dest('www/images'))
+		'src/img/**'])
+		.pipe(gulp.dest('www/img'))
 
 	var buildFonts = gulp.src([
 		'src/fonts/**'])
