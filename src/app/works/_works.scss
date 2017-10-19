@@ -1,5 +1,12 @@
 .works {
 	@extend .section-gap;
+	padding-bottom: 0;
+	@media (min-width: $md) {
+		padding-bottom: 0;
+	}
+	@media (min-width: $lg) {
+		padding-bottom: 0;
+	}
 
 	&__title {
 		@extend .title-section, .color--brownish-grey;
