@@ -1,17 +1,19 @@
-$(function () {
+$(function() {
+
   $('.js-btn-menu').on('click', function () {
     $('body').toggleClass('menu--show');
   });
 
-var header = document.querySelector('.header');
 
-  document.addEventListener('scroll', function () {
-  if (document.documentElement.scrollTop > 1) {
-    header.classList.add('header--color')
-  } else {
-    header.classList.remove('header--color')
-  }
+  var header = $('.header');
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 1) {
+      header.addClass('header--color');
+    } else {
+      header.removeClass('header--color');
+    }
   });
+
 
   $('.js-partners-slider').slick({
     arrows: false,
@@ -47,22 +49,23 @@ var header = document.querySelector('.header');
       }
     }]
   });
-});
 
 
-//scroll to section
-$('.js-scrollto').click(function () {
-  var elementClick = $(this).attr('href');
-  var destination = $(elementClick).offset().top;
-  $('html:not(:animated),body:not(:animated)').animate({
-  scrollTop: destination}, 800);
-  return false;
-});
+  //scroll to section
+  $('.js-scrollto').click(function () {
+    var elementClick = $(this).attr('href');
+    var destination = $(elementClick).offset().top;
+    $('html:not(:animated),body:not(:animated)').animate({
+    scrollTop: destination}, 800);
+    $('body').removeClass('menu--show');
+    return false;
+  });
 
-//menu-item-selecting-on-scroll
-var lastId,
+
+  //menu-item-selecting-on-scroll
+  var lastId,
     topMenu = $(".js-menu"),
-    topMenuHeight = topMenu.outerHeight()+15,
+    topMenuHeight = topMenu.outerHeight(),
     menuItems = $('.js-scrollto'),
     scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));
@@ -75,66 +78,65 @@ var lastId,
       e.preventDefault();
     });
 
-    $(window).scroll(function() {
-      // menu-item-selecting-onscroll
-      var fromTop = $(this).scrollTop()+topMenuHeight;
-      var cur = scrollItems.map(function(){
-        if ($(this).offset().top < fromTop)
-          return this;
-      });
-      cur = cur[cur.length-1];
-      var id = cur && cur.length ? cur[0].id : "";
+  $(window).scroll(function() {
+    // menu-item-selecting-onscroll
+    var fromTop = $(this).scrollTop()+topMenuHeight;
+    var cur = scrollItems.map(function(){
+      if ($(this).offset().top < fromTop)
+        return this;
+    });
+    cur = cur[cur.length-1];
+    var id = cur && cur.length ? cur[0].id : "";
 
-      if (lastId !== id) {
-        lastId = id;
-        menuItems
-        .parent().removeClass("menu__link--active")
-        .end().filter('[href="#'+id+'"]').parent().addClass("menu__link--active");
-      }
-
+    if (lastId !== id) {
+      lastId = id;
+      menuItems
+      .removeClass("menu__link--active")
+      .filter('[href="#'+id+'"]').addClass("menu__link--active");
+    }
   });
 
-//works
-$('.js-works').slick({
-  mobileFirst: true,
-  centerPadding: 0,
-  arrows: false,
-  rows: 2,
-  slidesToShow: 2,
-  responsive: [
-    {
-    breakpoint: 959,
-    settings: {
-      slidesToShow: 4
-    }
-
-  },
-    {
-      breakpoint: 659,
+  //works
+  $('.js-works').slick({
+    mobileFirst: true,
+    centerPadding: 0,
+    arrows: false,
+    rows: 2,
+    slidesToShow: 2,
+    responsive: [
+      {
+      breakpoint: 959,
       settings: {
-        slidesToShow: 3
+        slidesToShow: 4
       }
-    }]
+
+    },
+      {
+        breakpoint: 659,
+        settings: {
+          slidesToShow: 3
+        }
+      }]
+  });
+
+  var currentYear = (new Date).getFullYear();
+  $(".js-get-current-year").text(currentYear);
+
+
+  //forms
+  var formInput = $('.form__input');
+  formInput.focusin(function(){
+    $(this).addClass('form__input--focused');
+    $(this).prev('.form__input-title').addClass('form__input-title--focused');
+  });
+
+  formInput.focusout(function(){
+    if ($(this).val() == 0) {
+      $(this).removeClass('form__input--focused');
+      $(this).prev('.form__input-title').removeClass('form__input-title--focused');
+    };
+  });
 });
-
-var currentYear = (new Date).getFullYear();
-$(".js-get-current-year").text(currentYear);
-
-
-var formInput = $('.form__input');
-
-formInput.focusin(function(){
-  $(this).addClass('form__input--focused');
-  $(this).prev('.form__input-title').addClass('form__input-title--focused');
-});
-
-formInput.focusout(function(){
-  if ($(this).val() == 0) {
-    $(this).removeClass('form__input--focused');
-    $(this).prev('.form__input-title').removeClass('form__input-title--focused');
-  };
-});
-
 
 //map
 var map;
@@ -389,3 +391,4 @@ function initMap() {
     icon: 'img/marker.png'
   });
 };
+
