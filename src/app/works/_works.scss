@@ -33,6 +33,7 @@
 			.works__desc-wrap {
 				opacity: 1;
 				visibility: visible;
+				transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
 			}
 		}
 	}
@@ -74,6 +75,7 @@
 			visibility: hidden;
 			height: 100%;
 			padding: 30px;
+			transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
 		}
 	}
 	&__name,
