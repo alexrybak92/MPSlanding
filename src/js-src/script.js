@@ -3,14 +3,14 @@ $(function () {
     $('body').toggleClass('menu--show');
   });
 
-  var header = document.querySelector('.header');
+var header = document.querySelector('.header');
 
   document.addEventListener('scroll', function () {
-    if (document.documentElement.scrollTop > 1) {
-      header.classList.add('header--color')
-    } else {
-      header.classList.remove('header--color')
-    }
+  if (document.documentElement.scrollTop > 1) {
+    header.classList.add('header--color')
+  } else {
+    header.classList.remove('header--color')
+  }
   });
 
   $('.js-partners-slider').slick({
@@ -49,6 +49,52 @@ $(function () {
   });
 });
 
+
+//scroll to section
+$('.js-scrollto').click(function () {
+  var elementClick = $(this).attr('href');
+  var destination = $(elementClick).offset().top;
+  $('html:not(:animated),body:not(:animated)').animate({
+  scrollTop: destination}, 800);
+  return false;
+});
+
+//menu-item-selecting-on-scroll
+var lastId,
+    topMenu = $(".js-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    menuItems = $('.js-scrollto'),
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+    menuItems.click(function(e){
+      var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+      $('html, body').stop().animate({scrollTop: offsetTop}, 300);
+      e.preventDefault();
+    });
+
+    $(window).scroll(function() {
+      // menu-item-selecting-onscroll
+      var fromTop = $(this).scrollTop()+topMenuHeight;
+      var cur = scrollItems.map(function(){
+        if ($(this).offset().top < fromTop)
+          return this;
+      });
+      cur = cur[cur.length-1];
+      var id = cur && cur.length ? cur[0].id : "";
+
+      if (lastId !== id) {
+        lastId = id;
+        menuItems
+        .parent().removeClass("menu__link--active")
+        .end().filter('[href="#'+id+'"]').parent().addClass("menu__link--active");
+      }
+
+  });
+
+//works
 $('.js-works').slick({
   mobileFirst: true,
   centerPadding: 0,
@@ -73,7 +119,6 @@ $('.js-works').slick({
 
 var currentYear = (new Date).getFullYear();
 $(".js-get-current-year").text(currentYear);
-
 
 
 var formInput = $('.form__input');

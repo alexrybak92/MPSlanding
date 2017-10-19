@@ -1,5 +1,5 @@
 .promo
-  header.header
+  header.header.js-menu
     .header__inner
       .header__logo
         img(src='img/logo.svg', width='120', height='35', alt='MPS Development')
@@ -9,15 +9,15 @@
         .menu__dropdown
           ul.menu__list
             li.menu__item
-              a(class='menu__link menu__link--active', href="#about") About
+              a(class='menu__link js-scrollto', href="#about") About
             li.menu__item
-              a(class='menu__link', href="#") Team
+              a(class='menu__link js-scrollto', href="#123") Team
             li.menu__item
-              a(class='menu__link', href="#services") Services
+              a(class='menu__link js-scrollto', href="#services") Services
             li.menu__item
-              a(class='menu__link', href="#") Portfolio
+              a(class='menu__link js-scrollto', href="#portfolio") Portfolio
             li.menu__item
-              a(class='menu__link', href="#") Contact
+              a(class='menu__link js-scrollto', href="#contact") Contact
   section.promo__text
     p.promo__subtitle Professional software engineering services
     h1.promo__title Welcome to
