@@ -21,6 +21,12 @@
 		list-style-type: none;
 		font-size: 0;
 		padding: 0;
+		overflow-x: auto;
+		display: flex;
+		@media (min-width: $sm) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 		@media (min-width: $md) {
 			max-width: 100%;
 		}
@@ -30,34 +36,75 @@
 		position: relative;
 		overflow: hidden;
 		display: block;
-		&:after {
-			content: "";
-			display: block;
-			padding-bottom: 100%;
+		min-width: 250px;
+		min-height: 250px;
+		max-width: 250px;
+		max-height: 250px;
+
+		@media (min-width: 400px) {
+			min-width: 300px;
+			min-height: 300px;
+			max-width: 300px;
+			max-height: 300px;
+		}
+
+		@media (min-width: $sm) {
+			max-width: initial;
+			max-height: initial;
+			width: 40%;
+		}
+
+		@media (min-width: $md) {
+			min-width: initial;
+			min-height: initial;
+			width: 25%;
 		}
 
 		&:hover {
-			.works__desc-wrap {
+			.works__content {
 				opacity: 1;
 				visibility: visible;
 				transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
 			}
 		}
-	}
 
-	&__content {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		font-size: 0;
-		img {
-			object-fit: cover;
-			height: 100%;
-			width: 100%;
+		&:nth-child(odd){
+			.works__content{
+				top: auto;
+				bottom: 0;
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 20px;
+					top: -40px;
+					border: 20px solid transparent;
+					border-bottom: 20px solid rgba($primary, .8);
+				}
+
+			}
+		}
+
+		&:nth-child(even){
+		.works__content::after {
+				content: '';
+				position: absolute;
+				left: 20px;
+				bottom: -40px;
+				border: 20px solid transparent;
+				border-top: 20px solid rgba($primary, .8);
+			}
+
 		}
 	}
 
-	&__desc-wrap {
+	&__img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__content {
 		position: absolute;
 		height: 50%;
 		padding: 25px 15px 15px 25px;
@@ -67,15 +114,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-		background-color: rgba(76, 140, 245, .8);
+		background-color: rgba($primary, .8);
 		opacity: 1;
 		visibility: visible;
 		transition: .3s ease-in;
-
-		&--bottom {
-			top: auto;
-			bottom: 0;
-		}
 
 		@media (min-width: $md) {
 			opacity: 0;
@@ -85,6 +127,7 @@
 			transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
 		}
 	}
+
 	&__name,
 	&__desk  {
 		color: white;

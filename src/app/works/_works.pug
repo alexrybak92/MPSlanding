@@ -2,62 +2,67 @@ article.works#portfolio
   .wrapper.content--underlined
     h2.works__title our latest works
     p.works__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum libero quidem a recusandae. Culpa, error dicta, in mollitia odio nemo soluta, suscipit iste esse quae quas iure laboriosam accusamus, illum.
-  ul.works__list.js-works
-    li
-      a(class="works__item" href="#")
+  .works__list
+    mixin worksItem(worksUrl, worksName, woksDesc, worksImg, worksImgAlt)
+      a.works__item(href= worksUrl)
         .works__content
-          .works__desc-wrap
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/1.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap
-            h3.works__name Cloud-based push notification platform
-            p.works__desk
-          img(src="img/2.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap.works__desc-wrap--bottom
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/3.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap.works__desc-wrap--bottom
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/4.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/5.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/6.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap.works__desc-wrap--bottom
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/7.png")
-    li
-      a(class="works__item" href="#")
-        .works__content
-          .works__desc-wrap.works__desc-wrap--bottom
-            h3.works__name Cloud-based push notification platform
-            p.works__desk lorem
-          img(src="img/8.png")
+          h3.works__name= worksName
+          p.works__desk= woksDesc
+        img.works__img(src= worksImg, alt= worksImgAlt)
 
-
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/1.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/2.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/3.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/4.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/5.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/6.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/7.png',
+      'Cloud-based push notification platform'
+    )
+    +worksItem(
+      '#',
+      'Cloud-based push notification platform',
+      'lorem',
+      'img/8.png',
+      'Cloud-based push notification platform'
+    )
