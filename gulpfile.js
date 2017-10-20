@@ -8,12 +8,14 @@ var gulp 				= require('gulp'),
 	del						= require('del'),
 	gcmq 					= require('gulp-group-css-media-queries'),
 	gutil 				= require('gulp-util'),
-	imagemin			= require('gulp-imagemin'),
+	imagemin = require('gulp-imagemin'),
+	imageminPngquant = require('imagemin-pngquant'),
+	imageminMozjpeg = require('imagemin-mozjpeg'),
 	notify 				= require( 'gulp-notify' ),
 	pngquant			= require('imagemin-pngquant'),
 	rename				= require('gulp-rename'),
 	sass 					= require('gulp-sass'),
-	pug 					= require('gulp-pug')
+	pug 					= require('gulp-pug');
 
 
 //pug
@@ -61,12 +63,12 @@ gulp.task('sass', function(){
 // });
 gulp.task('scripts', function(){
 	return gulp.src('src/js-src/**/*.js')
-	.pipe(uglify().on('error', notify.onError(
-    {
-      message: "<%= error.message %>",
-      title  : "JSmin Error!"
-    }))
-	)
+	// .pipe(uglify().on('error', notify.onError(
+   //  {
+   //    message: "<%= error.message %>",
+   //    title  : "JSmin Error!"
+   //  }))
+	// )
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('src/js'))
 	.pipe(browserSync.reload({stream: true}))
@@ -102,13 +104,12 @@ gulp.task('clearCache', function(){
 
 // img compress
 gulp.task('img', function(){
-	return gulp.src('src/images/**/*')
-	.pipe(cache(imagemin({
-		interlaced: true,
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	})))
+	gulp.src('src/img/**/*')
+	.pipe(imagemin([
+      imagemin.gifsicle(),
+      imageminMozjpeg(),
+      imageminPngquant()],
+    {verbose: true}))
 	.pipe(gulp.dest('www/images'));
 });
 

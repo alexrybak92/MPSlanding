@@ -26,5 +26,9 @@
     "gulp-util": "^3.0.8",
     "imagemin-pngquant": "^5.0.1",
     "gulp-pug": "^3.3.0"
+  },
+  "dependencies": {
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.1"
   }
 }
