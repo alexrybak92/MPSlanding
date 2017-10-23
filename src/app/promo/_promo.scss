@@ -191,20 +191,43 @@
 	&__logo {
 		display: flex;
 		height: 60px;
-		img {
-			margin: auto;
-		}
 
 		@media (min-width: $md) {
 			height: 70px;
+		}
+	}
+}
 
-			img {
-				width: 150px;
-				height: 56px;
-			}
+.logo {
+	&__img {
+		margin: auto;
+		height: 34px;
+		width: auto;
+	}
+
+	&__text {
+		margin: auto 10px;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 1;
+		color: $primary;
+		div {
+			transform: translateX(-12px);
 		}
 	}
 
+	@media (min-width: $md) {
+		&__img{
+			height: 46px;
+		}
+
+		&__text {
+			font-size: 26px;
+			div {
+				transform: translateX(-16px);
+			}
+		}
+	}
 }
 
 .menu {
@@ -325,7 +348,7 @@
 		visibility: hidden;
 		opacity: 0;
 		overflow-y: auto;
-		background: linear-gradient(to bottom, $black-2, $pinkish-grey);
+		background: linear-gradient(to bottom, $black-2, #6b6b6b);
 		transition: .20s opacity;
 
 		@media (min-width: $md) {
