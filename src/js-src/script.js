@@ -18,7 +18,7 @@ $(function() {
   $('.js-partners-slider').slick({
     arrows: false,
     mobileFirst: true,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 1500,
     rows: 2,
     responsive: [{

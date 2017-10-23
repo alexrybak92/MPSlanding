@@ -24,9 +24,9 @@
 			top: 0;
 		}
 		&::before {
+			background: #234585 url(./../img/promo-bg.jpg) no-repeat fixed center;
 			background-size: cover;
 			animation: zoom 10s ease infinite alternate;
-			background: #234585 url(./../img/promo-bg.jpg) no-repeat fixed center;
 		}
 		&::after {
 			background: rgba(32, 32, 32, .6) url(../img/pattern_dots.png);

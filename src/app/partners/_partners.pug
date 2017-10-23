@@ -3,34 +3,68 @@ section.partners
     .wrapper.content--underlined
       h2.partners__title Our partners
       p.partners__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel necessitatibus, commodi ad quasi quaerat quis officiis maxime facere magni aliquid quas animi nulla minus beatae laudantium adipisci perspiciatis, ut fugit.
+
+    mixin partner(link, img, widthImg, heightImg, altImg)
+      li
+        a(href=link, class="partners__link")
+          img(src=img, width=widthImg, height=heightImg, alt=altImg)
+
     ul.partners__list.js-partners-slider
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
-      li
-        a(href="#" class="partners__link")
-          img(src="http://via.placeholder.com/350x150")
+      +partner(
+      '#',
+      './img/partner-solarwinds.svg',
+      '155',
+      '33',
+      'partner-solarwinds'
+      )
+      +partner(
+      '#',
+      './img/partners-clutch.svg',
+      '155',
+      '62',
+      'partners-clutch'
+      )
+      +partner(
+      '#',
+      './img/partners-sdt.png',
+      '146',
+      '36',
+      'partners-sdt'
+      )
+      +partner(
+      '#',
+      './img/partners-etsa.jpg',
+      '160',
+      '57',
+      'partners-etsa'
+      )
+      +partner(
+      '#',
+      './img/partners-skilled.png',
+      '96',
+      '80',
+      'partners-skilled'
+      )
+      +partner(
+      '#',
+      './img/partners-accelerance.png',
+      '155',
+      '33',
+      'partners-accelerance'
+      )
+      +partner(
+      '#',
+      'http://via.placeholder.com/350x150',
+      )
+      +partner(
+      '#',
+      'http://via.placeholder.com/350x150',
+      )
+      +partner(
+      '#',
+      'http://via.placeholder.com/350x150',
+      )
+      +partner(
+      '#',
+      'http://via.placeholder.com/350x150',
+      )
