@@ -50,15 +50,20 @@
 		background-color: #fff;
 
 		&:hover {
-			background-color: $primary;
+			img {
+				filter: grayscale(0)
+			}
 		}
 		&:focus {
 			outline: none;
 		}
 
 		img {
-			max-width: 155px;
+			max-width: 100%;
+			height: auto;
 			vertical-align: middle;
+			transition: all .3s ease-in-out;
+			filter: grayscale(100%)
 		}
 	}
 }
