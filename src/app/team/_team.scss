@@ -1,0 +1,140 @@
+.team {
+	@extend .section-gap, .bb--silver;
+	text-align: center;
+	background-color: $pale-grey;
+	padding-right: 15px;
+	padding-left: 15px;
+
+	&__inner {
+		@extend .wrapper;
+	}
+
+	&__title {
+		@extend .title-section, .color--brownish-grey;
+		text-align: center;
+	}
+
+	&__subtitle {
+		@extend .txt-nm, .color--warm-grey, .content-max-width;
+	}
+
+	&__main {
+		padding: 0;
+	}
+
+	&__item-main {
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 0;
+		img {
+			max-width: 800px;
+			max-height: 40vh;
+			height: 100%;
+			object-fit: cover;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	&__preview-list {
+		padding: 0;
+	}
+	&__wrapper-preview {
+		position: relative;
+		max-width: 290px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 30px;
+		padding-left: 30px;
+		@media (min-width: $sm) {
+			max-width: 700px;
+		}
+		@media (min-width: $md) {
+			max-width: 900px;
+		}
+	}
+	&__item-prewiev {
+		display: inline-block;
+		margin: 0 5px;
+		padding: 5px;
+		border-radius: 50%;
+		border: 2px solid #d8d9db;
+		overflow: hidden;
+		text-align: center;
+		cursor: pointer;
+		transition: .2s ease-out;
+
+		@media (min-width: $sm) {
+			border-width: 5px;
+			margin: 0 15px;
+		}
+		img {
+			display: inline-block;
+			vertical-align: top;
+			object-fit: cover;
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+
+			@media (min-width: $sm) {
+				height: 100px;
+				width: 100px;
+			}
+			@media (min-width: $md) {
+				height: 150px;
+				width: 150px;
+			}
+		}
+		&:hover {
+			border-color: darken(#d8d9db, 10%);
+		}
+
+	}
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+		transform: translateY(-50%);
+		font-size: 0;
+		background-color: transparent;
+		border: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			margin-top: -6px;
+			width: 14px;
+			height: 14px;
+			border-bottom: 1px solid $primary;
+		}
+		&--prev {
+			left: 0;
+			&::before {
+				left: 12px;
+				border-left: 1px solid $primary;
+				transform: rotate(45deg);
+			}
+		}
+		&--next {
+			right: 0;
+			&::before {
+				right: 12px;
+				border-right: 1px solid $primary;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	&:focus {
+		outline-color: $primary;
+	}
+
+}
+
+.slick-current {
+	.team__item-prewiev {
+		border-color: lighten($primary, 20%);
+	}
+}
