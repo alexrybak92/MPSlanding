@@ -1,0 +1,21 @@
+article.expertise
+	.expertise-wrap
+
+		.expertise__content
+			h2.expertise__title Technical exertise
+			p.expertise__txt If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.
+
+		.expertise__issues
+			mixin expertiseIssues(expertiseTitle, expertiseText, issueLink)
+				section.issue
+					.issue__box
+						span.issue__icon.icon-bulb
+					h3.issue__title= expertiseTitle
+					p.issue__text= expertiseText
+					a.issue__btn(href= issueLink) Read more
+
+			+expertiseIssues(
+				'Restful Applications',
+				'If you have an idea, questions or are ready to build a software solution, please, don`t hesitate to fill in this form.',
+				'#link'
+			)

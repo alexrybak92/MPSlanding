@@ -1,4 +1,5 @@
 .about {
+	@extend .bb--grey-2, .bg--white;
 
 	&-wrap {
 		@extend .wrapper, .section-gap;
