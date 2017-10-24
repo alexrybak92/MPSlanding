@@ -2,8 +2,6 @@
 	@extend .section-gap, .bb--silver;
 	text-align: center;
 	background-color: $pale-grey;
-	padding-right: 15px;
-	padding-left: 15px;
 
 	&__inner {
 		@extend .wrapper;
@@ -41,11 +39,11 @@
 	}
 	&__wrapper-preview {
 		position: relative;
-		max-width: 290px;
+		max-width: 394px;
 		margin-right: auto;
 		margin-left: auto;
-		padding-right: 30px;
-		padding-left: 30px;
+		padding-right: 50px;
+		padding-left: 50px;
 		@media (min-width: $sm) {
 			max-width: 700px;
 		}
@@ -92,13 +90,13 @@
 	}
 	&__arrow {
 		position: absolute;
-		top: 50%;
-		width: 30px;
-		height: 30px;
-		transform: translateY(-50%);
+		top: 0;
+		bottom: 0;
+		width: 40px;
 		font-size: 0;
 		background-color: transparent;
 		border: none;
+		cursor: pointer;
 
 		&::before {
 			content: '';
@@ -110,26 +108,27 @@
 			border-bottom: 1px solid $primary;
 		}
 		&--prev {
-			left: 0;
+			left: 10px;
 			&::before {
-				left: 12px;
+				left: 17px;
 				border-left: 1px solid $primary;
 				transform: rotate(45deg);
 			}
 		}
 		&--next {
-			right: 0;
+			right: 10px;
 			&::before {
-				right: 12px;
+				right: 17px;
 				border-right: 1px solid $primary;
 
 				transform: rotate(-45deg);
 			}
 		}
+		&:focus {
+			outline-color: $primary;
+		}
 	}
-	&:focus {
-		outline-color: $primary;
-	}
+
 
 }
 

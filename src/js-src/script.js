@@ -121,8 +121,8 @@ $('.js-team-main').slick({
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.js-team-preview'
-
+  asNavFor: '.js-team-preview',
+  lazyLoad:	'ondemand'
 });
 $('.js-team-preview').slick({
   mobileFirst: true,
@@ -137,6 +137,7 @@ $('.js-team-preview').slick({
   prevArrow: $('.team__arrow--prev'),
   nextArrow: $('.team__arrow--next'),
   initialSlide: 1,
+  lazyLoad:	'ondemand',
   responsive: [{
     breakpoint: 660,
     settings: {
