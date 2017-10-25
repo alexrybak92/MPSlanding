@@ -62,6 +62,19 @@ $(function() {
   });
 
 
+  //technical expertise
+  $('.js-issues').slick({
+    arrows: false,
+    dots: true,
+    dotsClass: 'issue__dots',
+    infinite: true,
+    mobileFirst: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+
+
   //menu-item-selecting-on-scroll
   var lastId,
     topMenu = $(".js-menu"),
@@ -116,6 +129,7 @@ $(function() {
     };
   });
 });
+
 $('.js-team-main').slick({
   slidesToShow: 1,
   slidesToScroll: 1,

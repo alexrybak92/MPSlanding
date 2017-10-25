@@ -5,17 +5,94 @@ article.expertise
 			h2.expertise__title Technical exertise
 			p.expertise__txt If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.
 
-		.expertise__issues
-			mixin expertiseIssues(expertiseTitle, expertiseText, issueLink)
-				section.issue
-					.issue__box
-						span.issue__icon.icon-bulb
-					h3.issue__title= expertiseTitle
-					p.issue__text= expertiseText
-					a.issue__btn(href= issueLink) Read more
+
+		.expertise__issues.js-issues
+			mixin expertiseIssues(expertiseTitle, expertiseText, issueLink, expertiseImgSrc)
+				div
+					.issue-wrap
+						section.issue
+							.issue__box
+								span.issue__icon.icon-bulb
+							h3.issue__title= expertiseTitle
+							p.issue__text!= expertiseText
+							a.issue__btn(href= issueLink) Read more
+						.issue__img-wrap
+							img.issue__img(src= expertiseImgSrc, alt= expertiseTitle)
+
 
 			+expertiseIssues(
 				'Restful Applications',
-				'If you have an idea, questions or are ready to build a software solution, please, don`t hesitate to fill in this form.',
-				'#link'
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-1.jpg'
+			)
+
+			+expertiseIssues(
+				'Desktop Applications (Windows, Linux)',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.',
+				'#link',
+				'../img/expertise/expertise-2.jpg'
+			)
+
+			+expertiseIssues(
+				'Browser Games',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-3.jpg'
+			)
+
+			+expertiseIssues(
+				'Complex Web Apps (with desktop apps functionality)',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner. ',
+				'#link',
+				'../img/expertise/expertise-4.jpg'
+			)
+
+			+expertiseIssues(
+				'High load applications',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-1.jpg'
+			)
+
+			+expertiseIssues(
+				'Performance optimizations',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.',
+				'#link',
+				'../img/expertise/expertise-2.jpg'
+			)
+
+			+expertiseIssues(
+				'Video / audio processing',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-3.jpg'
+			)
+
+			+expertiseIssues(
+				'Test automation: Selenium, HtmlUnit',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner. ',
+				'#link',
+				'../img/expertise/expertise-4.jpg'
+			)
+
+			+expertiseIssues(
+				'Geospatial: Openstreetmap, MapsForge, OpenweatherMap, geodesical calculations, path finding',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-1.jpg'
+			)
+
+			+expertiseIssues(
+				' Apps with complex math inside',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form. We&nbsp;are ready to&nbsp;provide you with free consultation, help you with your IT-related questions and become your reliable software partner.',
+				'#link',
+				'../img/expertise/expertise-2.jpg'
+			)
+
+			+expertiseIssues(
+				'Data scraping',
+				'If&nbsp;you have an&nbsp;idea, questions or&nbsp;are ready to&nbsp;build a&nbsp;software solution, please, don&rsquo;t hesitate to&nbsp;fill in&nbsp;this form.',
+				'#link',
+				'../img/expertise/expertise-3.jpg'
 			)

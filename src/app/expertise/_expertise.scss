@@ -26,14 +26,28 @@
 
 }
 
-
+// .slick-slider {
+// 	user-select: auto;
+// }
 
 .issue {
+	min-height: 630px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	&-wrap {
+		position: relative;
+	}
+
 	@extend .bg--white;
-	max-width: 665px;
 	text-align: center;
-	padding: 80px 60px 50px;
+	padding: 60px 40px 40px 30px;
 	box-shadow: 0px 3px 5px 0 $black-010;
+	position: relative;
+	right: 0;
+	z-index: 1;
 
 	&__box {
 		@extend .bg--primary;
@@ -84,7 +98,90 @@
 		font-size: 12px;
 	}
 
+	&__img {
+		&-wrap {
+			display: none;
+		}
+	}
+
+	&__dots {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+
+    li {
+    	display: block;
+    }
+
+    .slick-active button {
+    	background: $primary;
+    }
+
+    button {
+			font-size: 0;
+	    border: 4px solid #fff;
+	    width: 20px;
+	    height: 20px;
+	    border-radius: 50%;
+	    outline: none;
+	    background: $pale-grey;
+	    cursor: pointer;
+    }
+	}
+
+	@media (min-width: $sm) {
+		margin-left: auto;
+		margin-top: 7.25rem;
+		margin-bottom: 2.875rem;
+		max-width: 520px;
+		padding: 80px 50px 50px 70px;
+		&__img {
+			&-wrap {
+				display: block;
+				overflow: hidden;
+				width: 100%;
+				height: calc(100% + 2*2.875rem);
+				position: absolute;
+				top: -2.875rem;
+				left: 0;
+				max-width: 480px;
+			}
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		}
+
+		&__dots {
+			right: 15px;
+		}
+	}
+
 	@media (min-width: $md) {
+		max-width: 665px;
+		left: 0;
+		right: initial;
+		margin-right: auto;
+		margin-left: initial;
+		&__img {
+			&-wrap {
+				max-width: 585px;
+				right: 0;
+				left: initial;
+			}
+		}
+
+		&__dots {
+			left: 630px;
+			right: initial;
+		}
+
 		&__box {
 			width: 90px;
 			height: 90px;
