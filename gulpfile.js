@@ -115,7 +115,6 @@ gulp.task('watch', ['browser-sync', 'pug', 'css', 'scripts'], function() {
 	gulp.watch('src/scss/**/*.css', ['css']);
 	gulp.watch('src/**/*.pug', ['pug']);
 	gulp.watch('src/js-src/**/*.js', ['scripts']);
-	gulp.watch('src/js/**/*.js', ['scripts']);
 });
 
 
