@@ -381,12 +381,16 @@
 	&__item {
 		@media (min-width: $md) {
 			display: inline-block;
-			margin: 0 25px;
+			margin: 0 10px;
 			vertical-align: top;
 
 			&:last-child {
 				margin-right: 0;
 			}
+		}
+
+		@media (min-width: $lg) {
+			margin: 0 15px;
 		}
 	}
 	&__link {
@@ -395,6 +399,7 @@
 		padding: 0 10px;
 		font-size: 20px;
 		line-height: 2.5;
+		text-transform: capitalize;
 		color: $pale-grey;
 		text-decoration: none;
 		letter-spacing: 1.2px;
@@ -415,11 +420,20 @@
 		}
 
 		@media (min-width: $md) {
+			padding: 0;
+			font-size: 12px;
+			text-transform: uppercase;
+			line-height: 60px;
+			letter-spacing: normal;
+
 			&::before {
 				right: 0;
 				left: 0;
 				bottom: 12px;
 			}
+		}
+		@media (min-width: $lg) {
+			font-size: 14px;
 		}
 
 		&:hover {
@@ -453,14 +467,6 @@
 				}
 			}
 
-		}
-
-		@media (min-width: $md) {
-			padding: 0;
-			font-size: 14px;
-			text-transform: uppercase;
-			line-height: 60px;
-			letter-spacing: normal;
 		}
 	}
 }
