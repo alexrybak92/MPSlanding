@@ -66,10 +66,12 @@ $(function() {
   $('.js-issues').slick({
     arrows: false,
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     dotsClass: 'issue__dots',
     infinite: true,
     mobileFirst: true,
-    speed: 500,
+    speed: 0,
     fade: true,
     cssEase: 'linear'
   });
