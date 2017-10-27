@@ -1,9 +1,40 @@
 .technology {
-	@extend .bg--white;
+	background-image: linear-gradient(to top, rgba($black, .7), rgba($black, .7)),
+										url(../img/technologies-bg.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	@extend  .section-gap;
 
 	&-wrap {
 		@extend .wrapper;
-		padding-top: 2%;
-		padding-bottom: 2%;
 	}
+
+	&__title {
+			@extend .title-section, .color--pale-grey;
+			text-align: center;
+		}
+
+		&__subtitle {
+			@extend .color--pale-grey-2;
+			text-transform: uppercase;
+			font-size: 1.45rem;
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		&__txt {
+			@extend .txt-nm, .color--pale-grey, .content-max-width;
+		}
+
+	&__box {
+		overflow: hidden;
+	}
+}
+
+.box {
+	transform: translateX(-1%);
+	display: block;
+	width: 100vw;
+	height: 40vw;
 }

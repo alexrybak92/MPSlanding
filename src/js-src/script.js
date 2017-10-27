@@ -111,8 +111,45 @@ $(function() {
     }
   });
 
+  //svg animation
 
-//cur date
+  var snapC = Snap("#svgC");
+
+  // SVG C - "Squiggly" Path
+  var myPathC = snapC.path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5").attr({
+    id: "squiggle",
+    fill: "none",
+    strokeWidth: "1",
+    stroke: "#4c8cf5"
+  });
+
+  // SVG C - Draw Path
+  var lenC = myPathC.getTotalLength();
+
+  // SVG C - Animate Path
+
+
+  // SVG C - Triangle (As Polyline)
+  var Circle = snapC.circle(50, 50, 40);
+  Circle.attr({
+    id: "plane",
+    fill: "#fff",
+    stroke: "#4c8cf5",
+    strokeWidth: "1"
+  });
+  // var Circle2 = Circle.clone();
+
+  var circleGroup = snapC.g(Circle); // Group polyline
+
+  function start(){
+      Snap.animate(0, lenC, function( value ) {
+      movePoint = myPathC.getPointAtLength( value );
+      circleGroup.transform( 't' + parseInt(movePoint.x - 60) + ',' + parseInt( movePoint.y - 60) + 'r' + (movePoint.alpha - 90));
+    }, 10000, mina.linear, start)}
+
+  start();
+
+  //cur date
   var currentYear = (new Date).getFullYear();
   $(".js-get-current-year").text(currentYear);
 
@@ -160,6 +197,7 @@ $('.js-team-preview').slick({
       slidesToShow: 4
     }
   }]
+
 
 });
 
@@ -416,4 +454,5 @@ function initMap() {
     icon: 'img/marker.png'
   });
 };
+
 
