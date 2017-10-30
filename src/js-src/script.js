@@ -242,7 +242,9 @@ $(function() {
             transform: "translate(-15, -15) rotate(180deg)"
         });
         img.node.removeAttribute('preserveAspectRatio');
-        return s.g(circle.clone().attr({opacity: 1}), img);
+        var group = s.g(circle.clone().attr({opacity: 1}), img).attr({opacity: 0});
+        group.animate({opacity: 1}, 1000, mina.linear)
+        return group;
     }
 
 
