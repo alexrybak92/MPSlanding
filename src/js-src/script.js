@@ -177,8 +177,6 @@ $(function() {
 
     var s = Snap("#svgC");
 
-
-
     var path = s
         .path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5")
         .attr({
@@ -209,23 +207,33 @@ $(function() {
         );
     }
 
-    var circle = [s.circle(-20, 0, 15), s.circle(-20, 0, 25)];
-    circle.forEach(function(e) {
-        e.attr({
-            fill: "#fff",
-            stroke: "#4c8cf5",
-            strokeWidth: "1"
-        });
-    });
+    var ImgLink = ["http://orgmode.org/img/org-mode-unicorn-logo.svg", "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg","https://la-cascade.io/content/images/2015/05/grunt.svg"];
+
+
 
     function drawcircle(el) {
         el.drawAtPath(path, 15000, { callback: drawcircle.bind(null, el) });
     }
-    circle.forEach(function(e, i) {
+    ImgLink.forEach(function(e, i) {
         setTimeout(function() {
-            drawcircle(e);
+            drawcircle(createElement(e));
         }, i * 3000);
     });
+
+    var circle = s.circle("50%", "50%", 25).attr({
+        fill: "#fff",
+        opacity: 0,
+        stroke: "#4c8cf5",
+        strokeWidth: "1"
+    });
+
+    function createElement(imgURL) {
+        var img = s.image(imgURL, "50%", "50%", "40", "40").attr({
+            transform: "translate(-20, -20) rotate(180deg)"
+        });
+        return s.g(circle.clone().attr({opacity: 1}), img);
+    }
+
 
 
     //cur date
