@@ -4,6 +4,17 @@
 	background-attachment: fixed;
 	background-size: cover;
 	@extend  .section-gap;
+	padding-bottom: 40px;
+	@media (min-width: $md) {
+		padding-bottom: 70px;
+	}
+	@media (min-width: $lg) {
+		padding-bottom: 100px;
+	}
+
+	&--underlined {
+		margin-bottom: 0;
+	}
 
 	&-wrap {
 		@extend .wrapper;

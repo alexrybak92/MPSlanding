@@ -436,7 +436,9 @@
 			font-size: 14px;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
+			outline: none;
 			&::before {
 				transform-origin: left top;
 				transform: scale(1);
@@ -459,7 +461,8 @@
 				transform: scale(1);
 			}
 
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $primary;
 
 				&::before {

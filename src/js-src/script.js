@@ -6,7 +6,7 @@ $(function() {
 
 
   var header = $('.header');
-  $(window).on('scroll', function () {
+  $(window).on('load scroll', function () {
     if ($(this).scrollTop() > 1) {
       header.addClass('header--color');
     } else {
@@ -111,124 +111,158 @@ $(function() {
     }
   });
 
-    //Uses plugin at http://svg.dabbles.info/animate-object-path.js
-    (function() {
-        Snap.plugin(function(Snap, Element, Paper, global) {
-            Element.prototype.drawAtPath = function(path, timer, options) {
-                var myObject = this,
-                    bbox = this.getBBox(1);
-                var point,
-                    movePoint = {},
-                    len = path.getTotalLength(),
-                    from = 0,
-                    to = len,
-                    drawpath = 0,
-                    easing = mina.linear,
-                    callback;
-                var startingTransform = "";
+  // our team
+  $('.js-team-main').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.js-team-preview',
+    lazyLoad: 'ondemand'
+  });
+  $('.js-team-preview').slick({
+    mobileFirst: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerPadding: 0,
+    asNavFor: '.js-team-main',
+    centerMode: true,
+    focusOnSelect: true,
+    appendArrows: $('.team__arrows'),
+    arrow: true,
+    prevArrow: $('.team__arrow--prev'),
+    nextArrow: $('.team__arrow--next'),
+    initialSlide: 1,
+    lazyLoad: 'ondemand',
+    responsive: [{
+      breakpoint: 660,
+      settings: {
+        slidesToShow: 4
+      }
+    }]
+  });
 
-                if (options) {
-                    easing = options.easing || easing;
-                    if (options.reverse) {
-                        from = len;
-                        to = 0;
-                    }
-                    if (options.drawpath) {
-                        drawpath = 1;
-                        path.attr({
-                            fill: "none",
-                            strokeDasharray: len + " " + len,
-                            strokeDashoffset: this.len
-                        });
-                    }
-                    if (options.startingTransform) {
-                        startingTransform = options.startingTransform;
-                    }
-                    callback = options.callback || function() {};
-                }
-                Snap.animate(
-                    from,
-                    to,
-                    function(val) {
-                        point = path.getPointAtLength(val);
-                        movePoint.x = point.x - bbox.cx;
-                        movePoint.y = point.y - bbox.cy;
-                        myObject.transform(
-                            startingTransform +
-                            "t" +
-                            movePoint.x +
-                            "," +
-                            movePoint.y +
-                            "r" +
-                            point.alpha
-                        );
 
-                        if (drawpath) {
-                            path.attr({ "stroke-dashoffset": len - val });
-                        }
-                    },
-                    timer,
-                    easing,
-                    callback
+
+  //Uses plugin at http://svg.dabbles.info/animate-object-path.js
+  (function() {
+    Snap.plugin(function(Snap, Element, Paper, global) {
+      Element.prototype.drawAtPath = function(path, timer, options) {
+        var myObject = this,
+            bbox = this.getBBox(1);
+        var point,
+            movePoint = {},
+            len = path.getTotalLength(),
+            from = 0,
+            to = len,
+            drawpath = 0,
+            easing = mina.linear,
+            callback;
+        var startingTransform = "";
+
+        if (options) {
+            easing = options.easing || easing;
+            if (options.reverse) {
+                from = len;
+                to = 0;
+            }
+            if (options.drawpath) {
+                drawpath = 1;
+                path.attr({
+                    fill: "none",
+                    strokeDasharray: len + " " + len,
+                    strokeDashoffset: this.len
+                });
+            }
+            if (options.startingTransform) {
+                startingTransform = options.startingTransform;
+            }
+            callback = options.callback || function() {};
+        }
+        Snap.animate(
+            from,
+            to,
+            function(val) {
+                point = path.getPointAtLength(val);
+                movePoint.x = point.x - bbox.cx;
+                movePoint.y = point.y - bbox.cy;
+                myObject.transform(
+                    startingTransform +
+                    "t" +
+                    movePoint.x +
+                    "," +
+                    movePoint.y +
+                    "r" +
+                    point.alpha
                 );
-            };
-        });
-    })();
 
-    var s = Snap("#svgC");
-
-
-
-    var path = s
-        .path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5")
-        .attr({
-            fill: "none",
-            strokeWidth: "1",
-            stroke: "#4c8cf5"
-        });
-    animatePath(); // start loop
-
-    function animatePath() {
-        path.animate(
-            {
-                d:
-                    "m 1.5,153.81 c 0,0 204.63779,34.36771 326.08,-46.32511 C 437.25088,34.613589 570,16.35 574.37,1.5"
+                if (drawpath) {
+                    path.attr({ "stroke-dashoffset": len - val });
+                }
             },
-            4000,
-            mina.linear,
-            resetPath
+            timer,
+            easing,
+            callback
         );
-    }
-
-    function resetPath() {
-        path.animate(
-            { d: "M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5" },
-            4000,
-            mina.linear,
-            animatePath
-        );
-    }
-
-    var circle = [s.circle(-20, 0, 15), s.circle(-20, 0, 25)];
-    circle.forEach(function(e) {
-        e.attr({
-            fill: "#fff",
-            stroke: "#4c8cf5",
-            strokeWidth: "1"
-        });
+      };
     });
+  })();
 
-    function drawcircle(el) {
-        el.drawAtPath(path, 15000, { callback: drawcircle.bind(null, el) });
-    }
-    circle.forEach(function(e, i) {
-        setTimeout(function() {
-            drawcircle(e);
-        }, i * 3000);
+  var s = Snap("#svgC");
+
+  var path = s
+    .path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5")
+    .attr({
+        fill: "none",
+        strokeWidth: "1",
+        stroke: "#4c8cf5"
     });
+  animatePath(); // start loop
 
+  function animatePath() {
+    path.animate(
+        {
+            d:
+                "m 1.5,153.81 c 0,0 204.63779,34.36771 326.08,-46.32511 C 437.25088,34.613589 570,16.35 574.37,1.5"
+        },
+        6000,
+        mina.linear,
+        resetPath
+    );
+  }
 
-    //cur date
+  function resetPath() {
+      path.animate(
+          { d: "M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5" },
+          6000,
+          mina.linear,
+          animatePath
+      );
+  }
+
+  var circle = s.circle(-20, 0, 20).attr({
+    fill: "#fff",
+    stroke: "#4c8cf5",
+    strokeWidth: "1"
+  });
+
+  // var circle = Snap.load("../img/technology/circle.svg", function (loadedFragment) {
+  //   s.append(loadedFragment);
+  // });
+
+  // var circleClone = circle.clone();
+
+  function drawcircle(el) {
+      el.drawAtPath(path, 18000, {callback: drawcircle.bind(null, el)});
+  };
+
+  for (var x = 0; x < 17; x++) {
+    setTimeout(function() {
+      drawcircle(circle.clone()
+    )}, x*1500);
+  };
+
+  //cur date
   var currentYear = (new Date).getFullYear();
   $(".js-get-current-year").text(currentYear);
 
@@ -248,37 +282,6 @@ $(function() {
   });
 });
 
-$('.js-team-main').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.js-team-preview',
-  lazyLoad:	'ondemand'
-});
-$('.js-team-preview').slick({
-  mobileFirst: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerPadding: 0,
-  asNavFor: '.js-team-main',
-  centerMode: true,
-  focusOnSelect: true,
-  appendArrows: $('.team__arrows'),
-  arrow: true,
-  prevArrow: $('.team__arrow--prev'),
-  nextArrow: $('.team__arrow--next'),
-  initialSlide: 1,
-  lazyLoad:	'ondemand',
-  responsive: [{
-    breakpoint: 660,
-    settings: {
-      slidesToShow: 4
-    }
-  }]
-
-
-});
 
 //map
 var map;

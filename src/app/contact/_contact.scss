@@ -69,6 +69,16 @@
 		}
 	}
 
+	&__tel {
+		transition: all .3s ease;
+
+		&:hover,
+		&:focus {
+			color: lighten($primary, 10%);
+			outline: none;
+		}
+	}
+
 	@media (min-width: $md){
 		width: 40.5981%;
 		padding-left: 90px;
