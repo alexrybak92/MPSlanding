@@ -207,18 +207,28 @@ $(function() {
         );
     }
 
-    var ImgLink = ["http://orgmode.org/img/org-mode-unicorn-logo.svg", "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg","https://la-cascade.io/content/images/2015/05/grunt.svg"];
+    var ImgLink = [];
 
+    $.getJSON("technologiesLogo.json", function(json) {
+        for (key in json) {
+            ImgLink.push(json[key]);
+        }
+        return ImgLink;
+    });
 
 
     function drawcircle(el) {
         el.drawAtPath(path, 15000, { callback: drawcircle.bind(null, el) });
     }
-    ImgLink.forEach(function(e, i) {
-        setTimeout(function() {
-            drawcircle(createElement(e));
-        }, i * 3000);
-    });
+
+   $(window).on('load',function () {
+       ImgLink.forEach(function(e, i) {
+           setTimeout(function() {
+               drawcircle(createElement(e));
+           }, i * 3000);
+       });
+   });
+
 
     var circle = s.circle("50%", "50%", 25).attr({
         fill: "#fff",
@@ -228,9 +238,10 @@ $(function() {
     });
 
     function createElement(imgURL) {
-        var img = s.image(imgURL, "50%", "50%", "40", "40").attr({
-            transform: "translate(-20, -20) rotate(180deg)"
+        var img = s.image(imgURL, "50%", "50%", "30", "30").attr({
+            transform: "translate(-15, -15) rotate(180deg)"
         });
+        img.node.removeAttribute('preserveAspectRatio');
         return s.g(circle.clone().attr({opacity: 1}), img);
     }
 
