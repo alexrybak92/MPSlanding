@@ -235,14 +235,20 @@ $(function() {
     return ImgLink;
   });
 
-
-  $(window).on('load',function () {
+  function renderingCircle() {
     ImgLink.forEach(function(e, i) {
       setTimeout(function() {
         drawcircle(createElement(e));
       }, i * 2500);
-    });
+    })
+  };
+
+
+  $(window).on('load', function() {
+    renderingCircle();
   });
+
+
 
 
   function createElement(imgURL) {
