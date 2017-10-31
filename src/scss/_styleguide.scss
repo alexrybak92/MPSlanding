@@ -43,6 +43,14 @@ html {
 body {
 	min-width: 320px;
 	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	&:not(.is-home) {
+		.header {
+			position: relative;
+		}
+	}
 }
 
 
@@ -320,7 +328,7 @@ p {
 .content--underlined {
 	position: relative;
 	margin-bottom: 4.375rem;
-
+	z-index: 1;
 	&::after {
 		content: '';
 		display: block;
