@@ -1,9 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 72.1 72.1" style="enable-background:new 0 0 72.1 72.1;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#6CB244;}
-</style>
-<circle cx="-20" cy="0" r="20" style="stroke-width: 1;" fill="url(#s01)" stroke="#4c8cf5" transform="matrix(-0.974,0.2268,-0.2268,-0.974,259.4883,123.7101)"></circle>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+              "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path id="Unnamed" fill="#6DB33F" d="M 48.64,5.00
+           C 71.00,5.27 82.16,18.52 82.16,18.52
+             82.16,18.52 85.55,15.64 87.45,10.09
+             90.64,21.64 95.27,34.91 94.91,50.36
+             94.91,72.73 80.00,95.09 49.64,95.64
+             16.55,95.09 3.82,68.64 3.82,49.64
+             3.73,30.00 22.18,4.91 48.64,5.00 Z" />
+
+    <path id="Unnamed" fill="#FFF" d="M 86.82,15.18
+           C 79.55,28.73 66.27,36.00 45.36,36.36
+             30.27,36.73 18.82,44.82 17.91,59.64
+             17.64,68.45 20.82,72.64 25.64,75.82
+             49.91,72.55 69.91,65.27 82.18,42.36
+             73.73,67.09 55.64,75.82 31.55,81.36
+             51.27,82.00 72.36,83.64 85.09,72.73
+             95.36,61.45 95.73,38.09 86.82,15.18 Z" />
+
+    <path id="Unnamed" fill="#FFF" d="M 22.27,77.91
+           C 24.45,77.91 26.27,79.64 26.27,81.82
+             26.27,84.55 24.64,85.64 22.18,85.73
+             19.91,85.55 18.36,83.55 18.45,81.73
+             18.55,79.91 19.82,77.91 22.27,77.91 Z" />
 </svg>
