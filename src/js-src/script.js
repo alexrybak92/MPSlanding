@@ -160,45 +160,20 @@ $(function() {
             callback;
         var startingTransform = "";
 
-        if (options) {
-            easing = options.easing || easing;
-            if (options.reverse) {
-                from = len;
-                to = 0;
-            }
-            if (options.drawpath) {
-                drawpath = 1;
-                path.attr({
-                    fill: "none",
-                    strokeDasharray: len + " " + len,
-                    strokeDashoffset: this.len
-                });
-            }
-            if (options.startingTransform) {
-                startingTransform = options.startingTransform;
-            }
-            callback = options.callback || function() {};
-        }
-        Snap.animate(
-            from,
-            to,
-            function(val) {
-                point = path.getPointAtLength(val);
-                movePoint.x = point.x - bbox.cx;
-                movePoint.y = point.y - bbox.cy;
-                myObject.transform(
-                    startingTransform +
-                    "t" +
-                    movePoint.x +
-                    "," +
-                    movePoint.y +
-                    "r" +
-                    point.alpha
-                );
+    var path = s
+        .path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5")
+        .attr({
+            fill: "none",
+            strokeWidth: "1",
+            stroke: "#4c8cf5"
+        });
+    animatePath(); // start loop
 
-                if (drawpath) {
-                    path.attr({ "stroke-dashoffset": len - val });
-                }
+    function animatePath() {
+        path.animate(
+            {
+                d:
+                    "m 1.5,153.81 c 0,0 204.63779,34.36771 326.08,-46.32511 C 437.25088,34.613589 570,16.35 574.37,1.5"
             },
             timer,
             easing,
@@ -210,59 +185,50 @@ $(function() {
 
   var s = Snap("#svgC");
 
-  var path = s
-    .path("M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5")
-    .attr({
-        fill: "none",
-        strokeWidth: "1",
-        stroke: "#4c8cf5"
+    var ImgLink = [];
+
+    $.getJSON("technologiesLogo.json", function(json) {
+        for (key in json) {
+            ImgLink.push(json[key]);
+        }
+        return ImgLink;
     });
   animatePath(); // start loop
 
-  function animatePath() {
-    path.animate(
-        {
-            d:
-                "m 1.5,153.81 c 0,0 204.63779,34.36771 326.08,-46.32511 C 437.25088,34.613589 570,16.35 574.37,1.5"
-        },
-        6000,
-        mina.linear,
-        resetPath
-    );
-  }
 
-  function resetPath() {
-      path.animate(
-          { d: "M1.5,153.81s184.05-83.34,326.08-50.37S570,16.35,574.37,1.5" },
-          6000,
-          mina.linear,
-          animatePath
-      );
-  }
+    function drawcircle(el) {
+        el.drawAtPath(path, 15000, { callback: drawcircle.bind(null, el) });
+    }
 
-  var circle = s.circle(-20, 0, 20).attr({
-    fill: "#fff",
-    stroke: "#4c8cf5",
-    strokeWidth: "1"
-  });
+   $(window).on('load',function () {
+       ImgLink.forEach(function(e, i) {
+           setTimeout(function() {
+               drawcircle(createElement(e));
+           }, i * 3000);
+       });
+   });
 
-  // var circle = Snap.load("../img/technology/circle.svg", function (loadedFragment) {
-  //   s.append(loadedFragment);
-  // });
 
-  // var circleClone = circle.clone();
+    var circle = s.circle("50%", "50%", 25).attr({
+        fill: "#fff",
+        opacity: 0,
+        stroke: "#4c8cf5",
+        strokeWidth: "1"
+    });
 
-  function drawcircle(el) {
-      el.drawAtPath(path, 18000, {callback: drawcircle.bind(null, el)});
-  };
+    function createElement(imgURL) {
+        var img = s.image(imgURL, "50%", "50%", "30", "30").attr({
+            transform: "translate(-15, -15) rotate(180deg)"
+        });
+        img.node.removeAttribute('preserveAspectRatio');
+        var group = s.g(circle.clone().attr({opacity: 1}), img).attr({opacity: 0});
+        group.animate({opacity: 1}, 1000, mina.linear)
+        return group;
+    }
 
-  for (var x = 0; x < 17; x++) {
-    setTimeout(function() {
-      drawcircle(circle.clone()
-    )}, x*1500);
-  };
 
-  //cur date
+
+    //cur date
   var currentYear = (new Date).getFullYear();
   $(".js-get-current-year").text(currentYear);
 
