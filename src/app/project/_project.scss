@@ -1,0 +1,31 @@
+.project {
+	&__header {
+		position: relative;
+		display: flex;
+		align-items: center;
+		max-height: 500px;
+		min-height: 40vh;
+		background: rgba(purple, .5) url(./../img/slogan-bg.jpg) no-repeat fixed;
+		background-size: cover;
+		color: #fff;
+		text-align: center;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+		&::after{
+			filter: blur(5px);
+		}
+		&::before{
+			background-color: rgba(#000, .5);
+		}
+	}
+	&__content {
+
+	}
+}
