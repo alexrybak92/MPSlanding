@@ -16,8 +16,9 @@ html(lang="en")
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CSource+Sans+Pro:300,400,600,700", rel="preload" as="font")
 		link(href="css/style.min.css", rel="stylesheet")
 	body.is-home
-		include ../app/promo/_promo.pug
+		include ../app/header/_header.pug
 		main
+			include ../app/welcome/_welcome.pug
 			include ../app/about/_about.pug
 			include ../app/services/_services.pug
 			include ../app/expertise/_expertise.pug

@@ -2,9 +2,10 @@
 @import 'variables';
 @import 'fonts';
 @import 'styleguide';
-@import "plugins/slick";
+@import 'plugins/slick';
 
-@import '../app/promo/promo';
+@import '../app/header/header';
+@import '../app/welcome/welcome';
 @import '../app/services/services';
 @import '../app/about/about';
 @import '../app/technology/technology';

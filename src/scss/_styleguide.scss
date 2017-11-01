@@ -46,11 +46,6 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	&:not(.is-home) {
-		.header {
-			position: relative;
-		}
-	}
 }
 
 
@@ -137,7 +132,7 @@ p {
 	margin-bottom: .875rem;
 }
 
-.txt-promo--lg {
+.txt-welcome--lg {
 	@extend .color--pale-grey;
   font-weight: bold;
   text-align: center;
@@ -153,7 +148,7 @@ p {
 	}
 }
 
-.txt-promo--nm {
+.txt-welcome--nm {
 	@extend .color--pale-grey;
   font-family: $font-secondary;
   font-size: 1rem;
@@ -172,7 +167,7 @@ p {
 	}
 }
 
-.txt-promo--sm {
+.txt-welcome--sm {
 	@extend .color--pinkish-grey;
 
   text-align: center;
