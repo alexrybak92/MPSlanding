@@ -1,0 +1,108 @@
+.home-blog {
+	@extend .section-gap;
+	padding-bottom: 0;
+	@media (min-width: $md) {
+		padding-bottom: 0;
+	}
+	@media (min-width: $lg) {
+		padding-bottom: 0;
+	}
+
+	&__title {
+		@extend .title-section, .color--brownish-grey;
+		text-align: center;
+	}
+	&__txt {
+		@extend .txt-nm, .color--warm-grey, .content-max-width;
+	}
+
+	&__list {
+		overflow-x: auto;
+		display: flex;
+		// @media (min-width: $sm) {
+		// 	flex-wrap: wrap;
+		// 	justify-content: center;
+		// }
+		// @media (min-width: $md) {
+		// 	max-width: 100%;
+		// }
+	}
+
+	&__item {
+		min-width: 300px;
+		max-width: 300px;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+
+		&-wrap {
+			width: 100%;
+			height: 300px;
+			overflow: hidden;
+			// max-width: 480px;
+		}
+	}
+
+	&__content {
+		@extend .bg--primary;
+		padding: 3rem 2.5rem;
+		max-height: 300px;
+		overflow: hidden;
+	}
+
+	&__name {
+		font-family: $font-secondary;
+		font-size: 1.5rem;
+		line-height: 1.2;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-bottom: 3.125rem;
+		color: $white;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 44px;
+			height: 4px;
+			margin-top: 1.25rem;
+			background-color: $white;
+		}
+	}
+
+	&__desc {
+	  font-size: 1rem;
+	  line-height: 1.88;
+	  color: $white;
+	  overflow: hidden;
+	  margin-bottom: 3.5rem;
+	}
+
+	&__more {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 1.125rem;
+		font-weight: 600;
+		font-style: italic;
+		line-height: 1.33;
+		text-decoration: none;
+		color: $white;
+
+		&::after {
+			margin-left: 5px;
+			content: '';
+			display: inline-block;
+
+			width: 10px;
+			height: 10px;
+			border-right: 1px solid $white;
+			border-bottom: 1px solid $white;
+			transform: rotate(-45deg);
+		}
+	}
+}
