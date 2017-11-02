@@ -11,30 +11,14 @@ html(lang="en")
     meta(name="msapplication-navbutton-color", content="#4C8CF5")
     //- Apple
     meta(name="apple-mobile-web-app-status-bar-style", content="#4C8CF5")
-    title MPS Development | Full stack development service
+    title MPS Development | Portfolio | Browser Games
     link(rel="shortcut icon", href="img/favicon.png")
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CSource+Sans+Pro:300,400,600,700", rel="preload" as="font")
     link(href="css/style.min.css", rel="stylesheet")
   body
-    header.header.header--color.js-menu
-      .header__inner
-        .header__logo.logo
-          a(href="index.html" class="header__logo-home")
-            img.logo__img(src='img/logo.svg' alt='MPS')
-            div.logo__text <div>MPS</div>DEVELOPMENT
-        nav.menu
-          button(type='button' class='menu__toggle js-btn-menu') show/hide menu
-            span.menu__toggle-line
-          .menu__dropdown
-            ul.menu__list
-              li.menu__item
-                a(class='menu__link js-scrollto', href="index.html") Home
-              li.menu__item
-                a(class='menu__link', href="#", target="_blank") Blog
-              li.menu__item
-                a(class='menu__link', href="http://mpsdevelopment.com/", target="_blank") Software for aviation
-    include ../app/project/_project.pug
+    include ../app/header/_header.pug
+    main.single-project
+      include ../app/project/_project.pug
     include ../app/footer/_footer.pug
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx4xb6X3JgGSvTirMN1IZnAzBtD42eIeI&callback=initMap" async defer)
     script(src="js/script.min.js")

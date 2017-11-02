@@ -137,15 +137,15 @@
 		&--focused{
 			border-bottom-color: $primary;
 		}
+
+		&:required {
+		  box-shadow: none;
+		}
 	}
 
 	&__message {
-		// min-width: 100%;
-		// max-width: 100%;
-		// min-height: 96px;
 		height: 96px;
 		resize: none;
-		// max-height: 96px;
 	}
 
 	&__btn {

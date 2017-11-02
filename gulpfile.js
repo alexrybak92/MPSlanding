@@ -57,10 +57,10 @@ gulp.task('sass', function(){
 gulp.task('scripts', function(){
 	return gulp.src('src/js-src/**/*.js')
 	// .pipe(uglify().on('error', notify.onError(
-    // {
-     //  message: "<%= error.message %>",
-     //  title  : "JSmin Error!"
-    // }))
+ //    {
+ //      message: "<%= error.message %>",
+ //      title  : "JSmin Error!"
+ //    }))
 	// )
 	.pipe(concat('script.min.js'))
 	.pipe(gulp.dest('src/js'))

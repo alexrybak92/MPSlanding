@@ -1,0 +1,26 @@
+article.home-blog
+	.wrapper.content--underlined
+		h2.home-blog__title our blog
+		p.home-blog__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum libero quidem a recusandae. Culpa, error dicta, in mollitia odio nemo soluta, suscipit iste esse quae quas iure laboriosam accusamus, illum.
+	.home-blog__list
+		mixin homeBlogItem(homeBlogImg, homeBlogName, homeBlogDesc, homeBlogLink)
+			section.home-blog__item
+				.home-blog__img-wrap
+					img.home-blog__img(src= homeBlogImg, alt= homeBlogName)
+				.home-blog__content
+					h3.home-blog__name= homeBlogName
+					p.home-blog__desc= homeBlogDesc
+					a.home-blog__more(href= homeBlogLink, target="_blank") Read More
+
+		+homeBlogItem(
+			'img/blog/01.jpg',
+			'Meeting clutch',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			'Cloud-based push notification platform'
+		)
+		+homeBlogItem(
+			'img/blog/02.jpg',
+			'Visiting Forum AirLife',
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			'Cloud-based push notification platform'
+		)

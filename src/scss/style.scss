@@ -2,15 +2,17 @@
 @import 'variables';
 @import 'fonts';
 @import 'styleguide';
-@import "plugins/slick";
+@import 'plugins/slick';
 
-@import '../app/promo/promo';
+@import '../app/header/header';
+@import '../app/welcome/welcome';
 @import '../app/services/services';
 @import '../app/about/about';
 @import '../app/technology/technology';
 @import '../app/works/works';
 @import '../app/expertise/expertise';
 @import '../app/team/team';
+@import '../app/home-blog/home-blog';
 @import '../app/partners/partners';
 @import '../app/slogan/slogan';
 @import '../app/contact/contact';

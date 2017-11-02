@@ -1,0 +1,24 @@
+header.header.js-menu
+    .header__inner
+      a(href="index.html" class="header__logo-home").header__logo.logo
+        img.logo__img(src='img/logo.svg' alt='MPS')
+        div.logo__text <div>MPS</div>DEVELOPMENT
+      nav.menu
+        button(type='button' class='menu__toggle js-btn-menu') show/hide menu
+          span.menu__toggle-line
+        .menu__dropdown
+          ul.menu__list
+            li.menu__item
+              a(class='menu__link js-scrollto', href="#about") About
+            li.menu__item
+              a(class='menu__link js-scrollto', href="#services") Services
+            li.menu__item
+              a(class='menu__link js-scrollto', href="#portfolio") Portfolio
+            li.menu__item
+              a(class='menu__link js-scrollto', href="#team") Team
+            li.menu__item
+              a(class='menu__link js-scrollto', href="#contact") Contact
+            li.menu__item
+              a(class='menu__link', href="#", target="_blank") Blog
+            li.menu__item
+              a(class='menu__link', href="http://mpsdevelopment.com/", target="_blank") Software for aviation
