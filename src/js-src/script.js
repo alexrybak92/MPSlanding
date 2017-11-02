@@ -165,6 +165,7 @@ $(document).ready(function() {
     });
 
     var ImgLink = [];
+    var drawedElementsInfo;
 
     $.getJSON("../assets/technologiesLogo.json", function(json) {
       for (key in json) {
@@ -174,10 +175,17 @@ $(document).ready(function() {
     });
 
     function renderingCircle() {
+        drawedElementsInfo = [];
       ImgLink.forEach(function(e, i) {
-        setTimeout(function() {
-          drawcircle(createElement(e));
+        var element = createElement(e);
+        var timeoutId = setTimeout(function() {
+          drawcircle(element);
         }, i * 2500);
+
+          drawedElementsInfo.push({
+            timeoutId: timeoutId,
+            element: element
+        });
       })
     };
 
@@ -186,6 +194,16 @@ $(document).ready(function() {
       renderingCircle();
     });
 
+    $(window).blur(function(e) {
+      drawedElementsInfo.forEach(function (elementInfo) {
+        clearTimeout(elementInfo.timeoutId);
+        elementInfo.element.clear();
+      });
+    });
+
+    $(window).focus(function(e) {
+      renderingCircle();
+    });
 
 
 
@@ -197,7 +215,7 @@ $(document).ready(function() {
       var group = s.g(circle.clone().attr({opacity: 1}), img).attr({transform: 'scale(0)'});
       group.animate({
         opacity: "1"
-      }, 500, mina.linear)
+      }, 500, mina.linear);
       return group;
     }
   }
